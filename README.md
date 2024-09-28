@@ -2,11 +2,11 @@
 
 ![Lintilla PCB](images/pcb-lintilla.jpg)
 
-- Seeed Studio [XIAO BLE][xiao]
-- 320mah battery
+- 42 key wireless ergo keyboard with splay
+- Seeed Studio [XIAO BLE][xiao] microcontroller
 - Choc v1 hotswap switches
-- "Relaxed" choc spacing, a compromise between MX and choc
-- Low profile case
+- "Relaxed" choc spacing: a compromise between MX and choc
+- Low profile case with space for a "large" 250mAh battery
 - [ZMK][zmk] firmware
 - Designed with [ergogen][ergogen]
 - Licensed under the [CERN Open Hardware License v2][ohl]
