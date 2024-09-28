@@ -1,6 +1,6 @@
 # Lintilla Keyboard
 
-![Lintilla PCB](images/lintilla-pcb.jpg)
+![Lintilla PCB](images/pcb-lintilla.jpg)
 
 - Seeed Studio [XIAO BLE][xiao]
 - 320mah battery
