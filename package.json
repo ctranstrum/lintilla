@@ -1,0 +1,28 @@
+{
+  "name": "ergokb",
+  "version": "1.0.0",
+  "description": "Ergonomic Keyboard Design",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run ergo && npm run stl",
+    "angled": "npm run ergo && npm run angled-cases",
+    "angled-cases": "for i in output/cases/angled*.jscad; do npx @jscad/cli@1 \"$i\" -of stla; done",
+    "clean-all": "rm -rf output/*",
+    "clean-cases": "rm -rf output/cases/*",
+    "clean-outlines": "rm -rf output/outlines/*",
+    "clean-pcbs": "rm -rf output/pcbs/*",
+    "copy-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py -b copy-traces pcb/lintilla.kicad_pcb output/pcbs/lintilla.kicad_pcb",
+    "lock-traces": "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 ./helper.py lock-traces",
+    "sandwich": "npm run ergo && npm run sandwich-cases",
+    "sandwich-cases": "for i in output/cases/sandwich*.jscad; do npx @jscad/cli@1 \"$i\" -of stla; done",
+    "save-pcb": "cp output/pcbs/* pcb",
+    "ergo": "ergogen .",
+    "stl": "for i in output/cases/*.jscad; do npx @jscad/cli@1 \"$i\" -of stla; done",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chad Transtrum",
+  "license": "CERN-OHL-P-2.0",
+  "devDependencies": {
+    "ergogen": "^4.1.0"
+  }
+}

@@ -1,11 +1,17 @@
 # Lintilla Keyboard
 
-- Seeed Studio XIAO BLE
+![Lintilla PCB](images/lintilla-pcb.jpg)
+
+- Seeed Studio [XIAO BLE][xiao]
 - 320mah battery
 - Choc v1 hotswap switches
-- Relaxed chod spacing
+- "Relaxed" choc spacing, a compromise between MX and choc
 - Low profile case
-- ZMK firmware
-- Licensed under the [CERN Open Hardware License v2][OHL]
+- [ZMK][zmk] firmware
+- Designed with [ergogen][ergogen]
+- Licensed under the [CERN Open Hardware License v2][ohl]
 
-[OHL]: LICENSE.txt
+[ergogen]: https://ergogen.xyz
+[ohl]: LICENSE.txt
+[xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
+[zmk]: https://zmk.dev

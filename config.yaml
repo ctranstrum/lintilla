@@ -1,0 +1,1244 @@
+meta:
+  author: chad@transtrum.net
+  version: &version v0.1
+  repository: &repo https://github.com/ctranstrum/lintilla
+
+  # Depending on where you are ordering from, uncomment or edit one of these:
+  order_num_template: &order_text JLCJLCJLCJLC   # for ordering from JLCpcb.com
+  # order_num_template: &order_text WayWayWay    # for ordering from PCBway.com
+  # order_num_template: &order_text ""   # remove the order number text completely
+
+units:
+  $default_spread: (u + cx) / 2
+  $default_padding: (u + cy) / 2
+  $default_height: cy
+  $default_width: cx
+
+  # distance between keys
+  dx: (u + cx) / 2
+  dy: (u + cy) / 2
+
+  # distance to the line between keys
+  hdx: dx / 2
+  hdy: dy / 2
+
+points:
+  zones:
+    matrix:
+      # Shift the PCB down and to the right to get it on the sheet in kicad
+      anchor.shift: [50, -100]
+      key:
+        tags: [key]
+      columns:
+        outer:
+          key:
+            splay: 12.5
+            colpin: P4
+          rows:
+            bottom:
+              tags: [key, bumper_left]
+              rowpin: P2
+            home:
+              rowpin: P3
+        pinky:
+          key:
+            stagger: -dx * 0.45
+            colpin: P8
+          rows:
+            bottom:
+              bind: [5, 50, 0, 0]
+              rowpin: P1
+            home:
+              bind: 0
+              rowpin: P2
+            top:
+              bind: 0
+              rowpin: P3
+            fn:
+              orient: -10
+              shift: [0, 8.9]
+              bind: [0, 25, 20, 0]
+              tags: [key, bumper_left]
+              rowpin: P10
+        ring:
+          key:
+            stagger: dx * 0.66
+            splay: -5
+            colpin: P6
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              rowpin: P3
+            top:
+              rowpin: P10
+        middle:
+          key:
+            shift: [0.2, 0]
+            stagger: hdx
+            splay: -5
+            colpin: P9
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              bind: 0
+              rowpin: P3
+            top:
+              rowpin: P10
+        index:
+          key:
+            stagger: -hdx
+            splay: -2.5
+            colpin: P7
+          rows:
+            bottom:
+              rowpin: P2
+            home:
+              rowpin: P3
+            top:
+              rowpin: P10
+        inner:
+          key:
+            stagger: -dx / 6
+            colpin: P5
+          rows:
+            bottom:
+              bind: [5, 24, 16.76, 0]
+              rowpin: P2
+            home:
+              rowpin: P3
+            top:
+              bind: [0, 5, 5, 5]
+              rowpin: P10
+              tags: [key, bumper_right]
+
+    # thumb zone
+    thumb:
+      key:
+        tags: [key]
+        rowpin: P1
+      anchor:
+        ref: matrix_index_bottom
+        shift: [0, -dy - 1.5]
+      columns:
+        tucky.rows.spot:
+          skip: true
+        secondary.rows.spot:
+          splay: -15
+          origin: [-cx / 2, -cy / 2]
+          colpin: P9
+          bind: [0, 1, 0, 0]
+        primary.rows.spot:
+          splay: -15
+          origin: [-cx / 2, -cy / 2]
+          colpin: P7
+          bind: [0, 1, 0, 1]
+        reachy.rows.spot:
+          splay: -15
+          origin: [-cx / 2, -cy / 2]
+          colpin: P5
+          bind: [0, 0, 0, 1]
+          tags: [key, bumper_right]
+
+    # component zones
+    mcu:
+      anchor:
+        ref: matrix_inner_top
+        shift: [26, 0]
+        #columns.xiao.rows.ble:
+      key:
+        tags: [mcu, component]
+        bind: 10
+
+    battery:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [26, 1]
+        #columns.compartment.rows.cutout:
+      key:
+        tags: [battery, component]
+        bind: 10
+
+    reset_button:
+      anchor:
+        ref: matrix_index_top
+        shift: [-3, cy / 2]
+      key:
+        tags: [reset, component]
+
+    power_button:
+      anchor:
+        ref: matrix_inner_top
+        shift: [-3, cy / 2 + 0.05]
+      key:
+        tags: [power, component]
+
+    screw_top_left:
+      anchor:
+        ref: matrix_pinky_fn
+        shift: [hdx + 3, hdy - 3]
+      key:
+        tags: [screw, hardware]
+    screw_bottom_left:
+      anchor:
+        ref: matrix_pinky_bottom
+        shift: [hdx + 3, -hdy + 3]
+      key:
+        tags: [screw, hardware]
+    screw_top_right:
+      anchor:
+        ref: matrix_inner_top
+        shift: [hdx + 3, hdy - 3]
+      key:
+        tags: [screw, hardware]
+    screw_bottom_right:
+      anchor:
+        ref: thumb_primary_spot
+        shift: [hdx + 2, hdy]
+      key:
+        tags: [screw, hardware]
+
+
+outlines:
+  _flat_block:
+    - what: rectangle
+      size: 500
+
+  # Get the basic PCB outline
+  _raw:
+    - what: rectangle
+      where: key
+      bound: true
+      corner: 3
+      size: [cx + 4, cy + 4]
+    - what: rectangle
+      where: mcu
+      size: [30, 21]
+    - what: rectangle
+      where: battery
+      size: [30, 60]
+      corner: 1
+  pcb_fill:
+    - what: outline
+      name: _raw
+      fillet: 3
+
+  # Underneath the board, including space for battery wires and solder
+  # so that's why it's larger than it needs to be
+  _xiao_cutout:
+    - what: rectangle
+      where: mcu
+      size: [16, 25]
+      adjust.shift: [0, -4]
+
+  # Put a tiny wall on the bottom half
+  _xiao_cutout_wall:
+    - what: rectangle
+      where: mcu
+      size: [19, 21.5]
+      adjust.shift: [0, 0]
+
+  # Make a tiny hole for the blinky light
+  _xiao_light_guide_right:
+    - what: circle
+      where: mcu
+      radius: 1.05
+      adjust.shift: [-6, 7.5]
+
+  _xiao_light_guide_left:
+    - what: circle
+      where: mcu
+      radius: 1.05
+      adjust.shift: [6, 7.5]
+
+  # Just the center of the xiao, as a pcb cutout area to access the bottom pads
+  _xiao_bottom_pads:
+    - what: rectangle
+      where: mcu
+      size: [14, 22]
+      corner: 1
+
+  _xiao_usb:
+    - what: rectangle
+      where: mcu
+      size: [9.5, 8]
+      adjust.shift: [0, 7]
+
+  _xiao_chip:
+    - what: rectangle
+      where: mcu
+      size: 15
+      adjust.shift: [0, -4]
+
+  _battery_cutout:
+    - what: rectangle
+      where: battery
+      size: [24, 34]
+      corner: 1
+
+  # Add a little extra cutout under the board to attach the cables
+  _battery_cutout_under:
+    - what: outline
+      name: _battery_cutout
+    - what: circle
+      where: battery
+      radius: 7
+      adjust.shift: [-12, -15] # lower left corner
+    - what: rectangle
+      where: battery
+      size: [24, 10]
+      corner: 1
+      adjust.shift: [0, -17] # bottom edge of original cutout
+
+  pcb_outline:
+    - what: outline
+      name: pcb_fill
+    - what: outline
+      name: _xiao_bottom_pads
+      operation: subtract
+    - what: outline
+      name: _battery_cutout
+      operation: subtract
+
+  case_cutout_outline:
+    - what: outline
+      name: pcb_fill
+    # hollow out under the battery
+    - what: outline
+      name: _battery_cutout
+      operation: subtract
+    # and under the center of the xiao
+    - what: outline
+      name: _xiao_bottom_pads
+      operation: subtract
+
+  # Now set up the holes in the plate for the switches
+  _switch_outline_holes:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [13.8, 13.8]
+      corner: 1
+  _clip_holes:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [15, 13]
+      corner: 1
+
+  _switch_holes:
+    # these are created in the pcb software ...
+    # but we need to create them manually for our mock pcb
+    # ... also the radius has been rounded up for fdm printing ...
+    - what: circle # center post
+      where: key
+      radius: 1.9
+    - what: circle # left stabililzer
+      where: key
+      radius: 0.9
+      adjust.shift: [-5.5, 0]
+    - what: circle # right stabilizer
+      where: key
+      radius: 0.9
+      adjust.shift: [5.5, 0]
+
+  _diode_outline:
+    - what: rectangle
+      where: key
+      size: [3.7, 1.6]
+      adjust.shift: [0, 3.75]
+
+  _diode_hollow:
+    - what: outline
+      name: _diode_outline
+      expand: 0.4
+
+  _socket_holes:
+    # center
+    - what: circle
+      where: key
+      radius: 1.6
+      adjust.shift: [0, -5.95]
+    # left (or rather, right on the opposite side of the board)
+    - what: circle
+      where: key
+      radius: 1.6
+      adjust.shift: [-5, -3.75]
+    # right
+    - what: circle
+      where: key
+      radius: 1.6
+      adjust.shift: [5, -3.75]
+
+  # make a fairly accurate socket model
+  _socket_outline:
+    - what: rectangle
+      adjust.shift: [0, -5.95]
+      size: [4.75, 4.65]
+      bevel: 1
+    - what: rectangle
+      adjust.shift: [4.85, -3.8]
+      size: [4.85, 4.65]
+      fillet: 1
+    - what: rectangle
+      size: 2.6
+      adjust.shift: [2.4, -4.8]
+    - what: rectangle
+      adjust.shift: [1.4, -2.5]
+      size: 2.3
+    - what: circle
+      radius: 2.3
+      adjust.shift: [0.4, -1.35]
+      operation: subtract
+    - what: rectangle
+      size: 2
+      adjust.shift: [2.375, -6.125]
+    - what: circle
+      radius: 1
+      adjust.shift: [3.375, -7.125]
+      operation: subtract
+    - what: rectangle
+      size: [3.6, 1.7]
+      adjust.shift: [-2.375, -5.95]
+    - what: rectangle
+      size: [3.6, 1.7]
+      adjust.shift: [7.325, -3.8]
+    - what: rectangle
+      size: [2, 0.6]
+      adjust.shift: [6.5, -1.775]
+
+  # enlarge it a bit for wiggle room
+  _socket_hollow_right:
+    - what: outline
+      name: _socket_outline
+      expand: 0.5
+
+  # then drop it under every key
+  socket_hollow_right_board:
+    - what: outline
+      name: _socket_hollow_right
+      where: key
+
+  # make a fairly accurate socket model
+  _socket_outline_mirror:
+    - what: rectangle
+      adjust.shift: [0, -5.95]
+      size: [4.75, 4.65]
+      bevel: 1
+    - what: rectangle
+      adjust.shift: [-4.85, -3.8]
+      size: [4.85, 4.65]
+      fillet: 1
+    - what: rectangle
+      size: 2.6
+      adjust.shift: [-2.4, -4.8]
+    - what: rectangle
+      adjust.shift: [-1.4, -2.5]
+      size: 2.3
+    - what: circle
+      radius: 2.3
+      adjust.shift: [-0.4, -1.35]
+      operation: subtract
+    - what: rectangle
+      size: 2
+      adjust.shift: [-2.375, -6.125]
+    - what: circle
+      radius: 1
+      adjust.shift: [-3.375, -7.125]
+      operation: subtract
+    - what: rectangle
+      size: [3.6, 1.7]
+      adjust.shift: [2.375, -5.95]
+    - what: rectangle
+      size: [3.6, 1.7]
+      adjust.shift: [-7.325, -3.8]
+    - what: rectangle
+      size: [2, 0.6]
+      adjust.shift: [-6.5, -1.775]
+
+  # enlarge it a bit for wiggle room
+  _socket_hollow_left:
+    - what: outline
+      name: _socket_outline_mirror
+      expand: 0.5
+
+  # then drop it under every key
+  socket_hollow_left_board:
+    - what: outline
+      name: _socket_hollow_left
+      where: key
+
+  _socket_model_pins:
+    - what: rectangle
+      size: [1.2, 0.6]
+      adjust.shift: [0, -5.95]
+    - what: rectangle
+      size: [1.2, 0.6]
+      adjust.shift: [5, -3.8]
+
+  _socket_model_pins_hollow:
+    - what: outline
+      name: _socket_model_pins
+      expand: 0.3
+
+  _socket_posts_outline:
+    - what: circle
+      radius: 1.45
+      adjust.shift: [0, -5.95]
+    - what: circle
+      radius: 1.45
+      adjust.shift: [5, -3.8]
+
+  socket_models:
+    - what: outline
+      name: _socket_outline
+      where: key
+    - what: outline
+      name: _socket_model_pins
+      operation: subtract
+      where: key
+
+  socket_posts_model:
+    - what: outline
+      name: _socket_posts_outline
+      where: key
+    - what: outline
+      name: _socket_model_pins_hollow
+      where: key
+      operation: subtract
+
+  # The PCB outline with switch outline holes cut out
+  plate:
+    - what: outline
+      name: pcb_fill
+    - what: outline
+      name: _switch_outline_holes
+      operation: subtract
+
+  _bumper:
+    - what: circle
+      radius: 3.25
+
+  _bumpers_left:
+    - what: outline
+      name: _bumper
+      where: bumper_left
+      adjust.shift: [-6, 6]
+
+  _bumpers_right:
+    - what: outline
+      name: _bumper
+      where: bumper_right
+      adjust.shift: [6, 6]
+
+  _bumpers:
+    - what: outline
+      name: _bumpers_left
+    - what: outline
+      name: _bumpers_right
+
+  # then a few helpers to hollow out the case ...
+
+  # I know it feels backward to build the case with walls,
+  # but the height varies and hack off the top with an angle cut
+  # but we need to have a lip at that same angle ... so this is the
+  # best I could figure out
+  _gap:
+    - what: outline
+      name: pcb_fill
+      expand: 0.5
+      joints: round
+  _bottom_lip:
+    - what: outline
+      name: pcb_fill
+      expand: 1
+      joints: round
+  padding:
+    - what: outline
+      name: _gap
+    - what: outline
+      name: pcb_fill
+      operation: subtract
+  _wall:
+    - what: outline
+      name: _gap
+      expand: 1
+      joints: round
+  walls:
+    - what: outline
+      name: _wall
+    - what: outline
+      name: _gap
+      operation: subtract
+  _wall_lip:
+    - what: outline
+      name: _wall
+      expand: 0.5
+      joints: round
+      fillet: 1
+    - what: outline
+      name: _wall
+      operation: subtract
+  _angle_mask:
+    - what: outline
+      name: pcb_fill
+      expand: 9
+
+  _hex_nut_angle:
+    - what: rectangle
+      size: [2.45, 4.25]
+
+  _hex_nut:
+    - _hex_nut_angle
+    - what: outline
+      name: _hex_nut_angle
+      adjust.rotate: 60
+    - what: outline
+      name: _hex_nut_angle
+      adjust.rotate: -60
+
+  hex_nuts:
+    - what: outline
+      name: _hex_nut
+      where: screw
+
+  screw_outline:
+    - what: circle
+      radius: 2.25
+      where: screw
+
+  screw_shaft:
+    - what: circle
+      radius: 1.2
+      where: screw
+
+  _countersink1:
+    - what: outline
+      name: screw_shaft
+      expand: 1
+
+  _countersink2:
+    - what: outline
+      name: screw_shaft
+      expand: 0.8
+
+  _countersink3:
+    - what: outline
+      name: screw_shaft
+      expand: 0.6
+
+  _countersink4:
+    - what: outline
+      name: screw_shaft
+      expand: 0.4
+
+  _countersink5:
+    - what: outline
+      name: screw_shaft
+      expand: 0.2
+
+  _reset_model:
+    - what: rectangle
+      size: [6.3, 3.6]
+      where: reset
+    - what: rectangle
+      size: [2.55, 0.9]
+      where: reset
+      adjust.shift: [0, 2.05]
+
+  _reset_hollow:
+    - what: outline
+      name: _reset_model
+      expand: 0.5
+
+  _power_model:
+    - what: rectangle
+      size: [8, 3.9]
+      where: power
+    - what: rectangle
+      size: 1.3
+      where: power
+      adjust.shift: [1.5, 2.6]
+
+  _power_hollow:
+    - what: outline
+      name: _power_model
+      expand: 0.5
+
+cases:
+  _xiao_light_right:
+    - what: outline
+      name: _xiao_light_guide_right
+      extrude: 2.2
+  _xiao_light_left:
+    - what: outline
+      name: _xiao_light_guide_left
+      extrude: 2.2
+
+  _countersunk_screw:
+    - what: outline
+      name: screw_outline
+      extrude: 0.2
+    - what: outline
+      name: _countersink1
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _countersink2
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _countersink3
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _countersink4
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+    - what: outline
+      name: _countersink5
+      extrude: 0.2
+      shift: [0, 0, 1]
+    - what: outline
+      name: screw_shaft
+      extrude: 1
+      shift: [0, 0, 1.2]
+
+  _flat_screw:
+    - what: outline
+      name: screw_outline
+      extrude: 1.1
+    - what: outline
+      name: screw_shaft
+      extrude: 1.1
+      shift: [0, 0, 1.1]
+
+  # Let's get a model of the PCB
+  mock_pcb:
+    - what: outline
+      name: pcb_outline
+      extrude: 1.6
+    - what: outline
+      name: _switch_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: _socket_holes
+      extrude: 1.6
+      operation: subtract
+    - what: outline
+      name: screw_shaft
+      extrude: 1.6
+      operation: subtract
+
+  mock_pcb_with_components:
+    - mock_pcb
+    - what: outline
+      name: socket_posts_model
+      extrude: 1.6
+    - what: outline
+      name: socket_models
+      extrude: 1.8
+      shift: [0, 0, 1.6]
+    - what: outline
+      name: _diode_outline
+      extrude: 1.1
+      shift: [0, 0, 1.6]
+    - what: outline
+      name: _reset_model
+      extrude: 1.65
+      shift: [0, 0, 1.6]
+    - what: outline
+      name: _power_model
+      extrude: 1.5
+      shift: [0, 0, 1.6]
+
+  # Simple sandwich case is easy
+  _sandwich_top:
+    - what: outline
+      name: plate
+      extrude: 2.2
+    - what: outline
+      name: _clip_holes
+      extrude: 0.9
+      shift: [0, 0, 1.3]
+      operation: subtract
+    # hollow out under the xiao
+    - what: outline
+      name: _xiao_usb
+      extrude: 1.7
+      shift: [0, 0, 0.5]
+      operation: subtract
+    - what: outline
+      name: _xiao_chip
+      extrude: 0.2
+      shift: [0, 0, 2]
+      operation: subtract
+    # Give the battery a tiny bit more room
+    - what: outline
+      name: _battery_cutout
+      extrude: 1.4
+      shift: [0, 0, 0.8]
+      operation: subtract
+
+  _sandwich_top_flat:
+    - _sandwich_top
+    - -_flat_screw
+
+  _sandwich_top_countersunk:
+    - _sandwich_top
+    - -_countersunk_screw
+
+  sandwich_top_right:
+    - _sandwich_top_flat
+    - -_xiao_light_right
+
+  sandwich_top_left_reverse:
+    - _sandwich_top_flat
+    - -_xiao_light_left
+
+  sandwich_top_right_countersunk:
+    - _sandwich_top_countersunk
+    - -_xiao_light_right
+
+  sandwich_top_left_reverse_countersunk:
+    - _sandwich_top_countersunk
+    - -_xiao_light_left
+
+  _sandwich_bottom:
+    - what: outline
+      name: pcb_fill
+      extrude: 3.2
+    - what: outline
+      name: hex_nuts
+      extrude: 1.8
+      operation: subtract
+    - what: outline
+      name: screw_shaft
+      extrude: 1.4
+      shift: [0, 0, 1.8]
+      operation: subtract
+    - what: outline
+      name: _switch_holes
+      extrude: 1.3
+      shift: [0, 0, 1.9]
+      operation: subtract
+    - what: outline
+      name: _diode_hollow
+      extrude: 1.4
+      shift: [0, 0, 1.8]
+      operation: subtract
+    - what: outline
+      name: _battery_cutout_under
+      extrude: 2.4
+      shift: [0, 0, 0.8]
+      operation: subtract
+    - what: outline
+      name: _xiao_cutout
+      extrude: 2.5
+      shift: [0, 0, 0.7]
+      operation: subtract
+    - what: outline
+      name: _xiao_cutout_wall
+      extrude: 1.2
+      shift: [0, 0, 2]
+      operation: subtract
+    - what: outline
+      name: _reset_hollow
+      extrude: 1.8
+      shift: [0, 0, 1.4]
+      operation: subtract
+    - what: outline
+      name: _power_hollow
+      extrude: 1.6
+      shift: [0, 0, 1.6]
+      operation: subtract
+    - what: outline
+      name: _bumpers
+      extrude: 1
+      operation: subtract
+
+  sandwich_bottom_right_reverse:
+    - _sandwich_bottom
+    - what: outline
+      name: socket_hollow_right_board
+      extrude: 2
+      shift: [0, 0, 1.2]
+      operation: subtract
+
+  sandwich_bottom_left:
+    - _sandwich_bottom
+    - what: outline
+      name: socket_hollow_left_board
+      extrude: 2
+      shift: [0, 0, 1.2]
+      operation: subtract
+
+  # We use this to slice off the bottom of the case
+  _angle:
+    - what: outline
+      name: _flat_block
+      extrude: 15
+      rotate: [0, -2, 0]
+
+  # Build the top right case
+  _top_right_pre:
+    - what: case
+      name: sandwich_top_right
+      # Add a little extra padding between the PCP and the walls
+    - what: outline
+      name: padding
+      extrude: 2.2
+      # Extrude the walls plenty high
+    - what: outline
+      name: walls
+      extrude: 16
+      # then cut them at an angle
+    - what: case
+      name: _angle
+      shift: [0, 0, 6]
+      operation: subtract
+
+  angled_top_right:
+    - _top_right_pre
+      # and add a small lip
+    - what: outline
+      name: _wall_lip
+      extrude: 16
+      # and also cut it at an angle
+    - what: case
+      name: _angle
+      shift: [0, 0, 6.5]
+      operation: subtract
+
+  # Build the bottom left case
+  _bottom_pre:
+    # Start with the slightly larger bottom lip
+    - what: outline
+      name: _bottom_lip
+      extrude: 0.5
+    # then pop the outline of the PCB onto it
+    - what: outline
+      name: pcb_fill
+      extrude: 1.2
+      shift: [0, 0, 0.5]
+    # add the cutouts
+    - what: outline
+      name: case_cutout_outline
+      extrude: 8
+      shift: [0, 0, 1.7]
+    # and then angle slice it
+    - what: case
+      name: _angle
+      # shift: [0, 0, 3]
+      operation: subtract
+
+  angled_bottom_right_reverse:
+    - _bottom_pre
+    - what: outline
+      name: socket_hollow_right_board
+      extrude: 15
+      rotate: [0, -2, 0]
+      # shift: [0, 0, 3.9]
+      operation: subtract
+
+pcbs:
+  lintilla:
+    template: kicad8
+    outlines:
+      main:
+        outline: pcb_outline
+    params:
+      name: Lintilla
+      paper: A4
+
+    footprints:
+      hotswap_sockets:
+        what: pg1350
+        where: key
+        params:
+          from: "{{colpin}}"
+          to: "{{colrow}}"
+          keycaps: true
+          reverse: true
+          hotswap: true
+          vias: true
+        adjust.rotate: 180
+
+      diodes:
+        what: sod123
+        where: key
+        adjust:
+          shift: [0, 3.75]
+          rotate: 180
+        params:
+          designator: SW
+          from: "{{colrow}}"
+          to: "{{rowpin}}"
+          tht: false
+          via: 'pad'
+
+      xiao_mcu:
+        what: xiao
+        where: mcu
+        params:
+          orientation: down
+          VUSB: none
+          VCC: none
+          P0: none
+
+      xiao_note:
+        what: text
+        where: mcu
+        adjust.shift: [0, -12]
+        params.text: XIAO BLE FACE DOWN
+
+      xiao_bat_pos_front:
+        what: pad
+        where: battery
+        adjust.shift: [5, 19]
+        params:
+          side: F
+          net: BAT+
+          text: +
+          align: down
+          shape: circle
+          width: 2
+          height: 2
+
+      xiao_bat_pos_back:
+        what: pad
+        where: battery
+        adjust.shift: [-5, 19]
+        params:
+          side: B
+          net: BAT+
+          text: +
+          align: down
+          shape: circle
+          width: 2
+          height: 2
+
+      xiao_bat_pos_via_near:
+        what: via
+        where: battery
+        adjust.shift: [-8, 18.25]
+        params.net: BAT+
+
+      xiao_bat_pos_via_far:
+        what: via
+        where: matrix_inner_home
+        adjust.shift: [hdx, 1]
+        params.net: BAT+
+
+      xiao_bat_neg:
+        what: pad
+        where:
+          ref: battery
+          shift: [0, 19]
+        params:
+          net: BAT-
+          text: "-"
+          align: down
+          width: 2
+          height: 2
+
+      xiao_reset_front:
+        what: pad
+        where:
+          ref: battery
+          shift: [-5, 19]
+        params:
+          side: F
+          net: RST
+          text: RST
+          shape: circle
+          width: 2
+          height: 2
+
+      xiao_reset_back:
+        what: pad
+        where:
+          ref: battery
+          shift: [5, 19]
+        params:
+          side: B
+          net: RST
+          text: RST
+          shape: circle
+          align: right
+          width: 2
+          height: 2
+
+      xiao_reset_via:
+        what: via
+        where: battery
+        adjust.shift: [-8, 19.75]
+        params.net: RST
+
+      bat_note:
+        what: text
+        where: battery
+        adjust.shift: [-12, -18]
+        params:
+          text: BATTERY 5 x 20 x 30 mm
+          justify: left
+
+      bat_raw_pos:
+        what: pad
+        where: battery
+        adjust:
+          shift: [-14, -13.5]
+          rotate: 90
+        params:
+          net: RAW
+          text: BAT+
+          shape: circle
+          width: 2
+          height: 2
+
+      bat_raw_pos_via:
+        what: via
+        where: matrix_inner_bottom
+        adjust.shift: [-hdx, -hdy ]
+        params.net: RAW
+
+      bat_raw_neg:
+        what: pad
+        where: battery
+        adjust:
+          shift: [-14, -10]
+          rotate: -90
+        params:
+          net: BAT-
+          text: BAT-
+          width: 2
+          height: 2
+
+      reset_front:
+        what: evqpuc
+        where: reset
+        params:
+          side: F
+          from: GND
+          to: RST
+
+      reset_back:
+        what: evqpuc
+        where: reset
+        params:
+          side: B
+          from: GND
+          to: RST
+
+      reset_note:
+        what: text
+        where: reset
+        adjust.shift: [6, 1]
+        params.text: RESET
+
+      reset_via:
+        what: via
+        where: matrix_index_home
+        adjust.shift: [hdx, -0.5]
+        params.net: RST
+
+      power_front:
+        what: trislider
+        where: power
+        params:
+          side: F
+          COM: RAW
+          A: BAT+
+
+      power_back:
+        what: trislider
+        where: power
+        params:
+          side: B
+          posts: false
+          COM: RAW
+          B: BAT+
+
+      power_label:
+        what: text
+        where: power
+        adjust.shift: [4.5, 1]
+        params:
+          text: POWER
+          justify: left
+
+      power_on:
+        what: text
+        where: power
+        adjust.shift: [4.5, -0.4]
+        params:
+          text: ON
+          justify: left
+
+      power_off:
+        what: text
+        where: power
+        adjust.shift: [-4.5, 1]
+        params:
+          text: OFF
+          justify: right
+
+      mounting_holes:
+        what: mountinghole
+        where: screw
+
+      lintilla_name:
+        what: text
+        where: matrix_middle_top
+        adjust.shift: [-dx - 2, hdy - 3]
+        params:
+          side: F
+          text: Lintilla
+          size: 3
+          thickness: 0.5
+
+      allitnil_name:
+        what: text
+        where: matrix_middle_top
+        adjust.shift: [-dx - 2, hdy - 3]
+        params:
+          side: B
+          text: Allitnil
+          size: 3
+          thickness: 0.5
+
+      board_version:
+        what: text
+        where: matrix_middle_top
+        adjust.shift: [-dx - 2, hdy - 6]
+        params.text: *version
+
+      board_repo:
+        what: text
+        where: battery
+        adjust:
+          shift: [13.5, 10]
+          rotate: 90
+        params:
+          text: *repo
+          justify: right
+
+      license_note:
+        what: text
+        where: battery
+        adjust:
+          shift: [13.5, 13]
+          rotate: 90
+        params:
+          text: Licensed under CERN-OHL-P v2
+          justify: left
+
+      order_number:
+        what: text
+        where: matrix_pinky_fn
+        adjust.shift: [0, -hdy - 1]
+        params:
+          side: F
+          text: *order_text
