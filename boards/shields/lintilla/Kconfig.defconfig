@@ -1,0 +1,28 @@
+if SHIELD_LINTILLA_DONGLE || SHIELD_LINTILLA_LEFT_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "Lintilla"
+
+config ZMK_SPLIT_ROLE_CENTAL
+    default y
+
+config ZMK_USB
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+    default y
+
+endif
+
+if SHIELD_LINTILLA_LEFT_PERIPHERAL || SHIELD_LINTILLA_RIGHT_PERIPHERAL
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+    default y
+
+endif

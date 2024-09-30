@@ -1,0 +1,51 @@
+#include "lintilla.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zephyr,display = &oled_1306;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&xiao_i2c {
+    status = "okay";
+
+    oled_1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+//        segment-remap;
+//        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+
+    oled_1106: ssh1106@3c {
+        compatible = "sinowealth,sh1106";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <2>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+//        segment-remap;
+//        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree

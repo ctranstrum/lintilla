@@ -1,0 +1,22 @@
+#include "lintilla.dtsi"
+#include "lintilla_kscan.dtsi"
+
+/ {
+    &default_transform: {
+        col-offset = <5>;
+    };
+
+    &kscan0: kscan {
+        col-gpios
+            = <&xiao_d 5 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 6 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 4 GPIO_ACTIVE_HIGH>
+            ;
+        };
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree

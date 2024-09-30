@@ -1,0 +1,17 @@
+file_format: "1"
+id: lintilla
+name: Lintilla
+type: shield
+url: https://github.com/ctranstrum/lintilla
+requires:
+  - xiao_ble
+exposes:
+  - i2c_oled
+features:
+  - keys
+  - display
+siblings:
+  - lintilla_left_central
+  - lintilla_left_peripheral
+  - lintilla_right_peripheral
+  - lintilla_dongle
