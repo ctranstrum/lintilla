@@ -7,11 +7,12 @@
 - Choc v1 hotswap switches
 - "Relaxed" choc spacing: a compromise between MX and choc
 - Low profile case with space for a "large" 250mAh battery
-- [ZMK][zmk] firmware
+- [ZMK][zmk] [firmware][firmware]
 - Designed with [ergogen][ergogen]
 - Licensed under the [CERN Open Hardware License v2][ohl]
 
 [ergogen]: https://ergogen.xyz
+[firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
 [ohl]: LICENSE.txt
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk]: https://zmk.dev
