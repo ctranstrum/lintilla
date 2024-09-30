@@ -3,7 +3,7 @@ if SHIELD_LINTILLA_DONGLE || SHIELD_LINTILLA_LEFT_CENTRAL
 config ZMK_KEYBOARD_NAME
     default "Lintilla"
 
-config ZMK_SPLIT_ROLE_CENTAL
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 config ZMK_USB
