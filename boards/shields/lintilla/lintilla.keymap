@@ -154,11 +154,12 @@
 // ┃       ┃       ┃       ┃       ┃       ┃       ┃                          ┃   /   ┃   7   ┃   8   ┃   9   ┃   -   ┃ BKSPC ┃
      &none   &none   &none   &none   &none   &none                            &kp SLASH &kp N7 &kp N8  &kp N9 &kp MINUS &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃   *   ┃   4   ┃   5   ┃   6   ┃   +   ┃RETURN ┃
-&kp GLOBE &kp LSFT &kp LCTL &kp LALT &kp LGUI &kp RALT                        &kp STAR &kp N4  &kp N5  &kp N6 &kp PLUS &kp RET
+// ┃       ┃ CtrlA ┃       ┃       ┃       ┃       ┃                          ┃   *   ┃   4   ┃   5   ┃   6   ┃   +   ┃RETURN ┃
+&kp GLOBE Sft LC(A) &kp LCTL &kp LALT &kp LGUI &kp RALT                        &kp STAR &kp N4  &kp N5  &kp N6 &kp PLUS &kp RET
+// ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
-//         ┃       ┃       ┃       ┃       ┃       ┃                          ┃   :   ┃   1   ┃   2   ┃   3   ┃   =   ┃
-             &none   &none   &none   &none   &none                            &kp COLON &kp N1 &kp N2  &kp N3 &kp EQUAL
+//         ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlV ┃       ┃                          ┃   :   ┃   1   ┃   2   ┃   3   ┃   =   ┃
+         &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &none                        &kp COLON &kp N1 &kp N2  &kp N3 &kp EQUAL
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ ##### ┃       ┃       ┃  ┃   .   ┃ SPACE ┃   0   ┃
                                          &trans  &mo 2   &none    &kp COMMA &kp SPC &kp N0
@@ -229,8 +230,8 @@
 // ┃   `   ┃   *   ┃   #   ┃   +   ┃   %   ┃   _   ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 &kp GRAVE &kp STAR &kp HASH &kp PLUS &kp PRCNT &kp UNDER                        &none   &none   &none   &none   &none   &none
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃   ~   ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃ Globe ┃
-&kp TILDE &kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                     &kp RALT &kp LGUI &kp LALT &kp LCTL &kp LSFT &kp GLOBE
+// ┃   ~   ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃ Globe ┃
+&kp TILDE &kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                      &kp RALT &kp LGUI &kp LALT &kp LCTL &none &kp GLOBE
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
 //         ┃   <   ┃   >   ┃   [   ┃   ]   ┃   ?   ┃                          ┃       ┃       ┃       ┃       ┃       ┃
              &kp LT &kp GT &kp LBKT &kp RBKT &kp QMARK                          &none   &none   &none   &none   &none
@@ -251,7 +252,7 @@
 //         ┃ dongle┃                                                                                          ┃ ##### ┃
            &flash 6                                                                                             &trans
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃ brt + ┃       ┃       ┃scrn cp┃scrnsht┃ vol + ┃                          ┃connect┃       ┃battery┃       ┃       ┃       ┃
+// ┃ brt + ┃       ┃       ┃scrn cp┃scrnsht┃ vol + ┃                          ┃con led┃       ┃bat led┃       ┃       ┃       ┃
 &kp C_BRI_UP &none   &none  GCS(N4) GS(N4) &kp C_VOL_UP                       &ind_con  &none &ind_bat  &none   &none   &none
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ brt - ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
