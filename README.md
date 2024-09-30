@@ -62,5 +62,6 @@ To customize the keymap for your Lintilla board, you can copy the
 [default keymap][keymap] from this repo to the `config` directory of
 your zmk config repo.
 
+[keymap]: https://github.com/ctranstrum/lintilla/tree/zmk/boards/shields/lintilla/lintilla.keymap
 [lintilla]: https://github.com/ctranstrum/lintilla
 [zmk]: https://zmk.dev/docs/user-setup#github-repo
