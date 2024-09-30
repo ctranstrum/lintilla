@@ -36,13 +36,13 @@ For Lintilla with a dongle:
 ```yaml
 include:
   - board: seeeduino_xiao_ble
-    shield: lintilla_dongle
+    shield: lintilla_dongle dongle_display
     artifact-name: lintilla-dongle
   - board: seeeduino_xiao_ble
-    shield: lintilla_left_peripheral
+    shield: lintilla_left_peripheral rgbled_adapter
     artifact-name: lintilla-left
   - board: seeeduino_xiao_ble
-    shield: lintilla_right_peripheral
+    shield: lintilla_right_peripheral rgbled_adapter
     artifact-name: lintilla-right
 ```
 
@@ -51,10 +51,10 @@ Or for Lintilla without a dongle:
 ```yaml
 include:
   - board: seeeduino_xiao_ble
-    shield: lintilla_left_central
+    shield: lintilla_left_central rgbled_adapter
     artifact-name: lintilla-left
   - board: seeeduino_xiao_ble
-    shield: lintilla_right_peripheral
+    shield: lintilla_right_peripheral rgbled_adapter
     artifact-name: lintilla-right
 ```
 
