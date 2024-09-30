@@ -1,22 +1,18 @@
 include:
-  # Lintilla
+  # Lintilla Dongle (optional)
+  - board: seeeduino_xiao_ble
+    shield: lintilla_dongle dongle_display
+    artifact-name: lintilla-dongle
+
+  # Lintilla left can either be a central (no dongle) or peripheral (with dongle)
   - board: seeeduino_xiao_ble
     shield: lintilla_left_central rgbled_adapter
     artifact-name: lintilla-left-central
   - board: seeeduino_xiao_ble
-    shield: lintilla_right_peripheral rgbled_adapter
-    artifact-name: lintilla-right-peripheral
-
-  # Lintilla Dongle
-  - board: seeeduino_xiao_ble
-    shield: lintilla_dongle dongle_display
-    artifact-name: lintilla-dongle
-  - board: seeeduino_xiao_ble
     shield: lintilla_left_peripheral rgbled_adapter
     artifact-name: lintilla-left-peripheral
-  # We already have this board defined above
-  # but if you comment out the above so you build only the dongle
-  # you can uncomment this here
-  # - board: seeeduino_xiao_ble
-  #   shield: lintilla_right_peripheral rgbled_adapter
-  #   artifact-name: lintilla_right_peripheral
+
+  # Lintilla right will always be a peripheral
+  - board: seeeduino_xiao_ble
+    shield: lintilla_right_peripheral rgbled_adapter
+    artifact-name: lintilla-right-peripheral
