@@ -2,11 +2,11 @@
 #include "lintilla_kscan.dtsi"
 
 
-&default_transform: {
+&default_transform {
     col-offset = <5>;
 };
 
-&kscan0: kscan {
+&kscan0 {
     col-gpios
         = <&xiao_d 5 GPIO_ACTIVE_HIGH>
         , <&xiao_d 7 GPIO_ACTIVE_HIGH>
