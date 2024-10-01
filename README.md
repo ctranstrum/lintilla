@@ -16,14 +16,14 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: ctranstrum # <-- new entry
-      url-base: https://github.com/
+      url-base: https://github.com/ctranstrum
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: lintilla # <-- new entry
-      remote: ctranstum
+      remote: ctranstrum
       revision: zmk
   self:
     path: config
@@ -60,7 +60,7 @@ include:
 
 To customize the keymap for your Lintilla board, you can copy the
 [default keymap][keymap] from this repo to the `config` directory of
-your zmk config repo.
+your zmk config repo and edit it from there.
 
 [keymap]: https://github.com/ctranstrum/lintilla/tree/zmk/boards/shields/lintilla/lintilla.keymap
 [lintilla]: https://github.com/ctranstrum/lintilla
