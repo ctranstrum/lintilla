@@ -229,7 +229,7 @@ outlines:
   _xiao_cutout:
     - what: rectangle
       where: mcu
-      size: [16, 25]
+      size: [14, 25]
       adjust.shift: [0, -4]
 
   # Put a tiny wall on the bottom half
@@ -237,7 +237,7 @@ outlines:
     - what: rectangle
       where: mcu
       size: [19, 21.5]
-      adjust.shift: [0, 0]
+      corner: 1
 
   # Make a tiny hole for the blinky light
   _xiao_light_guide_right:
@@ -262,14 +262,14 @@ outlines:
   _xiao_usb:
     - what: rectangle
       where: mcu
-      size: [9.5, 8]
-      adjust.shift: [0, 7]
+      size: [9.5, 6.5]
+      adjust.shift: [0, 7.25]
 
   _xiao_chip:
     - what: rectangle
       where: mcu
-      size: 15
-      adjust.shift: [0, -4]
+      size: [13, 12]
+      adjust.shift: [0, -2]
 
   _battery_cutout:
     - what: rectangle
@@ -806,19 +806,29 @@ cases:
     - _sandwich_top_countersunk
     - -_xiao_light_left
 
-  _sandwich_bottom:
-    - what: outline
-      name: pcb_fill
-      extrude: 3.2
+  _exposed_nuts:
     - what: outline
       name: hex_nuts
       extrude: 1.8
-      operation: subtract
     - what: outline
       name: screw_shaft
       extrude: 1.4
       shift: [0, 0, 1.8]
-      operation: subtract
+
+  _print_in_place_nuts:
+    - what: outline
+      name: hex_nuts
+      extrude: 1.8
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: screw_shaft
+      extrude: 1
+      shift: [0, 0, 2.2]
+
+  _sandwich_bottom:
+    - what: outline
+      name: pcb_fill
+      extrude: 3.2
     - what: outline
       name: _switch_holes
       extrude: 1.3
@@ -859,8 +869,16 @@ cases:
       extrude: 1
       operation: subtract
 
-  sandwich_bottom_right_reverse:
+  _sandwich_bottom_nuts:
     - _sandwich_bottom
+    - -_exposed_nuts
+
+  _sandwich_bottom_print_in_place_nuts:
+    - _sandwich_bottom
+    - -_print_in_place_nuts
+
+  sandwich_bottom_right_reverse:
+    - _sandwich_bottom_nuts
     - what: outline
       name: socket_hollow_right_board
       extrude: 2
@@ -868,7 +886,22 @@ cases:
       operation: subtract
 
   sandwich_bottom_left:
-    - _sandwich_bottom
+    - _sandwich_bottom_nuts
+    - what: outline
+      name: socket_hollow_left_board
+      extrude: 2
+      shift: [0, 0, 1.2]
+
+  sandwich_bottom_right_hidden_reverse:
+    - _sandwich_bottom_print_in_place_nuts
+    - what: outline
+      name: socket_hollow_right_board
+      extrude: 2
+      shift: [0, 0, 1.2]
+      operation: subtract
+
+  sandwich_bottom_left_hidden:
+    - _sandwich_bottom_print_in_place_nuts
     - what: outline
       name: socket_hollow_left_board
       extrude: 2
