@@ -252,8 +252,8 @@
 //         ┃ dongle┃                                                                                          ┃ ##### ┃
            &flash 6                                                                                             &trans
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃ brt + ┃       ┃       ┃scrn cp┃scrnsht┃ vol + ┃                          ┃con led┃       ┃bat led┃       ┃       ┃       ┃
-&kp C_BRI_UP &none   &none  GCS(N4) GS(N4) &kp C_VOL_UP                       &ind_con  &none &ind_bat  &none   &none   &none
+// ┃ brt + ┃       ┃       ┃scrnsht┃scrn cp┃ vol + ┃                          ┃con led┃       ┃bat led┃       ┃       ┃       ┃
+&kp C_BRI_UP &none   &none  GS(N4) GCS(N4) &kp C_VOL_UP                       &ind_con  &none &ind_bat  &none   &none   &none
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ brt - ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 &kp C_BRI_DN BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                             &none   &none   &none   &none   &none   &none
