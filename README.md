@@ -37,6 +37,7 @@ For Lintilla with a dongle:
 include:
   - board: seeeduino_xiao_ble
     shield: lintilla_dongle dongle_display
+    snippet: studio-rpc-usb-uart
     artifact-name: lintilla-dongle
   - board: seeeduino_xiao_ble
     shield: lintilla_left_peripheral rgbled_adapter
@@ -52,6 +53,7 @@ Or for Lintilla without a dongle:
 include:
   - board: seeeduino_xiao_ble
     shield: lintilla_left_central rgbled_adapter
+    snippet: studio-rpc-usb-uart
     artifact-name: lintilla-left
   - board: seeeduino_xiao_ble
     shield: lintilla_right_peripheral rgbled_adapter

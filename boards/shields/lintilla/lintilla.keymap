@@ -261,9 +261,9 @@
 //         ┃ flash ┃       ┃caps lk┃       ┃ vol - ┃                          ┃       ┃       ┃       ┃       ┃ flash ┃
         &bootloader &none &kp CAPS &none &kp C_VOL_DN                           &none   &none   &none   &none &bootloader
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ prev  ┃ play  ┃ next  ┃  ┃       ┃       ┃       ┃
-                                      &kp PIPE &kp AMPS &kp MINUS   &none   &none   &none
-//                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫       ┣━━━━━━━┛
+//                                     ┃ prev  ┃ play  ┃ next  ┃  ┃       ┃studio ┃       ┃
+                                      &kp PIPE &kp AMPS &kp MINUS &none &studio_unlock &none
+//                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫ unlock┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
         };
@@ -291,6 +291,44 @@
 //                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫       ┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
+        };
+
+        // Extra emply layers for ZMK Studio
+
+        layer7 {
+            status = "reserved";
+        };
+
+        layer8 {
+            status = "reserved";
+        };
+
+        layer9 {
+            status = "reserved";
+        };
+
+        layer10 {
+            status = "reserved";
+        };
+
+        layer11 {
+            status = "reserved";
+        };
+
+        layer12 {
+            status = "reserved";
+        };
+
+        layer13 {
+            status = "reserved";
+        };
+
+        layer14 {
+            status = "reserved";
+        };
+
+        layer15 {
+            status = "reserved";
         };
     };
 };

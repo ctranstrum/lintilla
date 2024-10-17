@@ -14,6 +14,10 @@
     };
 };
 
+&defaut_layout {
+    kscan = <&mock_kscan>;
+};
+
 &xiao_i2c {
     status = "okay";
 

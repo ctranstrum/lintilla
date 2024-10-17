@@ -2,11 +2,13 @@ include:
   # Lintilla Dongle (optional)
   - board: seeeduino_xiao_ble
     shield: lintilla_dongle dongle_display
+    snippet: studio-rpc-usb-uart
     artifact-name: lintilla-dongle
 
   # Lintilla left can either be a central (no dongle) or peripheral (with dongle)
   - board: seeeduino_xiao_ble
     shield: lintilla_left_central rgbled_adapter
+    snippet: studio-rpc-usb-uart
     artifact-name: lintilla-left-central
   - board: seeeduino_xiao_ble
     shield: lintilla_left_peripheral rgbled_adapter
