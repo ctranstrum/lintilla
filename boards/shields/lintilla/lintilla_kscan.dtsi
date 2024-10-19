@@ -26,4 +26,14 @@
     };
 };
 
+// For bigger batteries, we want to enable faster charging
+&gpio0 {
+    fastbatcharge: fast-battery-charge {
+        gpio-hog;
+        gpios = <13 GPIO_ACTIVE_HIGH>;
+        output-low;
+        line-name = "Fast Battery Charge";
+    };
+};
+
 // vim: expandtab softtabstop=4 shiftwidth=4
