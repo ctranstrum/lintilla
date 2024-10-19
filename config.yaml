@@ -538,53 +538,6 @@ outlines:
     - what: outline
       name: _bumpers_right
 
-  # then a few helpers to hollow out the case ...
-
-  # I know it feels backward to build the case with walls,
-  # but the height varies and hack off the top with an angle cut
-  # but we need to have a lip at that same angle ... so this is the
-  # best I could figure out
-  _gap:
-    - what: outline
-      name: pcb_fill
-      expand: 0.5
-      joints: round
-  _bottom_lip:
-    - what: outline
-      name: pcb_fill
-      expand: 1
-      joints: round
-  padding:
-    - what: outline
-      name: _gap
-    - what: outline
-      name: pcb_fill
-      operation: subtract
-  _wall:
-    - what: outline
-      name: _gap
-      expand: 1
-      joints: round
-  walls:
-    - what: outline
-      name: _wall
-    - what: outline
-      name: _gap
-      operation: subtract
-  _wall_lip:
-    - what: outline
-      name: _wall
-      expand: 0.5
-      joints: round
-      fillet: 1
-    - what: outline
-      name: _wall
-      operation: subtract
-  _angle_mask:
-    - what: outline
-      name: pcb_fill
-      expand: 9
-
   _hex_nut_angle:
     - what: rectangle
       size: [2.45, 4.25]
@@ -678,41 +631,37 @@ cases:
 
   _countersunk_screw:
     - what: outline
-      name: screw_outline
-      extrude: 0.2
-    - what: outline
       name: _countersink1
       extrude: 0.2
-      shift: [0, 0, 0.2]
     - what: outline
       name: _countersink2
       extrude: 0.2
-      shift: [0, 0, 0.4]
+      shift: [0, 0, 0.2]
     - what: outline
       name: _countersink3
       extrude: 0.2
-      shift: [0, 0, 0.6]
+      shift: [0, 0, 0.4]
     - what: outline
       name: _countersink4
       extrude: 0.2
-      shift: [0, 0, 0.8]
+      shift: [0, 0, 0.6]
     - what: outline
       name: _countersink5
       extrude: 0.2
-      shift: [0, 0, 1]
+      shift: [0, 0, 0.8]
     - what: outline
       name: screw_shaft
-      extrude: 1
-      shift: [0, 0, 1.2]
+      extrude: 2.2
+      shift: [0, 0, 1]
 
   _flat_screw:
     - what: outline
       name: screw_outline
-      extrude: 1.1
+      extrude: 1.2
     - what: outline
       name: screw_shaft
-      extrude: 1.1
-      shift: [0, 0, 1.1]
+      extrude: 2
+      shift: [0, 0, 1.2]
 
   # Let's get a model of the PCB
   mock_pcb:
@@ -755,7 +704,7 @@ cases:
       shift: [0, 0, 1.6]
 
   # Simple sandwich case is easy
-  _sandwich_top:
+  _top:
     - what: outline
       name: plate
       extrude: 2.2
@@ -781,51 +730,22 @@ cases:
       extrude: 1.4
       shift: [0, 0, 0.8]
       operation: subtract
-
-  _sandwich_top_flat:
-    - _sandwich_top
-    - -_flat_screw
-
-  _sandwich_top_countersunk:
-    - _sandwich_top
-    - -_countersunk_screw
-
-  sandwich_top_right:
-    - _sandwich_top_flat
-    - -_xiao_light_right
-
-  sandwich_top_left_reverse:
-    - _sandwich_top_flat
-    - -_xiao_light_left
-
-  sandwich_top_right_countersunk:
-    - _sandwich_top_countersunk
-    - -_xiao_light_right
-
-  sandwich_top_left_reverse_countersunk:
-    - _sandwich_top_countersunk
-    - -_xiao_light_left
-
-  _exposed_nuts:
+    # Cut out for the hex nuts
     - what: outline
       name: hex_nuts
-      extrude: 1.8
-    - what: outline
-      name: screw_shaft
-      extrude: 1.4
-      shift: [0, 0, 1.8]
+      extrude: 1.6
+      shift: [0, 0, 0.6]
+      operation: subtract
 
-  _print_in_place_nuts:
-    - what: outline
-      name: hex_nuts
-      extrude: 1.8
-      shift: [0, 0, 0.4]
-    - what: outline
-      name: screw_shaft
-      extrude: 1
-      shift: [0, 0, 2.2]
+  top_right:
+    - _top
+    - -_xiao_light_right
 
-  _sandwich_bottom:
+  top_left_reverse:
+    - _top
+    - -_xiao_light_left
+
+  _bottom:
     - what: outline
       name: pcb_fill
       extrude: 3.2
@@ -868,112 +788,22 @@ cases:
       name: _bumpers
       extrude: 1
       operation: subtract
+    - -_countersunk_screw
 
-  _sandwich_bottom_nuts:
-    - _sandwich_bottom
-    - -_exposed_nuts
-
-  _sandwich_bottom_print_in_place_nuts:
-    - _sandwich_bottom
-    - -_print_in_place_nuts
-
-  sandwich_bottom_right_reverse:
-    - _sandwich_bottom_nuts
+  bottom_right_reverse:
+    - _bottom
     - what: outline
       name: socket_hollow_right_board
       extrude: 2
       shift: [0, 0, 1.2]
       operation: subtract
 
-  sandwich_bottom_left:
-    - _sandwich_bottom_nuts
+  bottom_left:
+    - _bottom
     - what: outline
       name: socket_hollow_left_board
       extrude: 2
       shift: [0, 0, 1.2]
-
-  sandwich_bottom_right_hidden_reverse:
-    - _sandwich_bottom_print_in_place_nuts
-    - what: outline
-      name: socket_hollow_right_board
-      extrude: 2
-      shift: [0, 0, 1.2]
-      operation: subtract
-
-  sandwich_bottom_left_hidden:
-    - _sandwich_bottom_print_in_place_nuts
-    - what: outline
-      name: socket_hollow_left_board
-      extrude: 2
-      shift: [0, 0, 1.2]
-      operation: subtract
-
-  # We use this to slice off the bottom of the case
-  _angle:
-    - what: outline
-      name: _flat_block
-      extrude: 15
-      rotate: [0, -2, 0]
-
-  # Build the top right case
-  _top_right_pre:
-    - what: case
-      name: sandwich_top_right
-      # Add a little extra padding between the PCP and the walls
-    - what: outline
-      name: padding
-      extrude: 2.2
-      # Extrude the walls plenty high
-    - what: outline
-      name: walls
-      extrude: 16
-      # then cut them at an angle
-    - what: case
-      name: _angle
-      shift: [0, 0, 6]
-      operation: subtract
-
-  angled_top_right:
-    - _top_right_pre
-      # and add a small lip
-    - what: outline
-      name: _wall_lip
-      extrude: 16
-      # and also cut it at an angle
-    - what: case
-      name: _angle
-      shift: [0, 0, 6.5]
-      operation: subtract
-
-  # Build the bottom left case
-  _bottom_pre:
-    # Start with the slightly larger bottom lip
-    - what: outline
-      name: _bottom_lip
-      extrude: 0.5
-    # then pop the outline of the PCB onto it
-    - what: outline
-      name: pcb_fill
-      extrude: 1.2
-      shift: [0, 0, 0.5]
-    # add the cutouts
-    - what: outline
-      name: case_cutout_outline
-      extrude: 8
-      shift: [0, 0, 1.7]
-    # and then angle slice it
-    - what: case
-      name: _angle
-      # shift: [0, 0, 3]
-      operation: subtract
-
-  angled_bottom_right_reverse:
-    - _bottom_pre
-    - what: outline
-      name: socket_hollow_right_board
-      extrude: 15
-      rotate: [0, -2, 0]
-      # shift: [0, 0, 3.9]
       operation: subtract
 
 pcbs:
