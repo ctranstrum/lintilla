@@ -292,26 +292,16 @@ outlines:
       adjust.shift: [0, -17] # bottom edge of original cutout
 
   pcb_outline:
-    - what: outline
-      name: pcb_fill
-    - what: outline
-      name: _xiao_bottom_pads
-      operation: subtract
-    - what: outline
-      name: _battery_cutout
-      operation: subtract
+    - pcb_fill
+    - -_xiao_bottom_pads
+    - -_battery_cutout
 
   case_cutout_outline:
-    - what: outline
-      name: pcb_fill
+    - pcb_fill
     # hollow out under the battery
-    - what: outline
-      name: _battery_cutout
-      operation: subtract
+    - -_battery_cutout
     # and under the center of the xiao
-    - what: outline
-      name: _xiao_bottom_pads
-      operation: subtract
+    - -_xiao_bottom_pads
 
   # Now set up the holes in the plate for the switches
   _switch_outline_holes:
@@ -325,6 +315,42 @@ outlines:
       where: key
       bound: false
       size: [15, 13]
+      corner: 1
+
+  # An indentation to fit the hotswap tool beneath each switch
+  _swaptool1:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [3.5, 17]
+      corner: 1
+
+  _swaptool2:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [3.5, 17.4]
+      corner: 1
+
+  _swaptool3:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [3.5, 17.8]
+      corner: 1
+
+  _swaptool4:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [3.5, 18.2]
+      corner: 1
+
+  _swaptool5:
+    - what: rectangle
+      where: key
+      bound: false
+      size: [3.5, 18.6]
       corner: 1
 
   _switch_holes:
@@ -510,11 +536,8 @@ outlines:
 
   # The PCB outline with switch outline holes cut out
   plate:
-    - what: outline
-      name: pcb_fill
-    - what: outline
-      name: _switch_outline_holes
-      operation: subtract
+    - pcb_fill
+    - -_switch_outline_holes
 
   _bumper:
     - what: circle
@@ -703,6 +726,27 @@ cases:
       extrude: 1.5
       shift: [0, 0, 1.6]
 
+  _hotswap_tool_holes:
+    - what: outline
+      name: _swaptool5
+      extrude: 0.2
+    - what: outline
+      name: _swaptool4
+      extrude: 0.2
+      shift: [0, 0, 0.2]
+    - what: outline
+      name: _swaptool3
+      extrude: 0.2
+      shift: [0, 0, 0.4]
+    - what: outline
+      name: _swaptool2
+      extrude: 0.2
+      shift: [0, 0, 0.6]
+    - what: outline
+      name: _swaptool1
+      extrude: 0.2
+      shift: [0, 0, 0.8]
+
   # Simple sandwich case is easy
   _top:
     - what: outline
@@ -712,6 +756,9 @@ cases:
       name: _clip_holes
       extrude: 0.9
       shift: [0, 0, 1.3]
+      operation: subtract
+    - what: case
+      name: _hotswap_tool_holes
       operation: subtract
     # hollow out under the xiao
     - what: outline
