@@ -1,28 +1,66 @@
 if SHIELD_LINTILLA_DONGLE || SHIELD_LINTILLA_LEFT_CENTRAL
 
-config ZMK_KEYBOARD_NAME
-    default "Lintilla"
-
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 config ZMK_USB
     default y
 
-config ZMK_SPLIT
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
     default y
 
-config ZMK_BLE
+endif
+
+if SHIELD_LINTILLA_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Lintilla Dongle"
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
+    default 7
+
+config ZMK_DISPLAY
+    default y
+
+config ZMK_IDLE_TIMEOUT
+    default 300000
+
+config BT_BAS
+    default n
+
+endif
+
+if SHIELD_LINTILLA_LEFT_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "Lintilla"
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 1
+
+config BT_MAX_CONN
+    default 6
+
+config BT_MAX_PAIRED
+    default 6
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
     default y
 
 endif
 
 if SHIELD_LINTILLA_LEFT_PERIPHERAL || SHIELD_LINTILLA_RIGHT_PERIPHERAL
 
+endif
+
 config ZMK_SPLIT
     default y
 
 config ZMK_BLE
     default y
-
-endif
