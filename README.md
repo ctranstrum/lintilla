@@ -4,7 +4,7 @@
 ![Lintilla side view](images/lintilla-side-view.jpg)
 ![Lintilla PCB](images/pcb-lintilla.jpg)
 
-- 42 key wireless split ergo keyboard with splay
+- 42 key wireless split ergo keyboard with splay and "reachy" thumbs
 - Seeed Studio [XIAO BLE][xiao] microcontroller
 - Choc v1 hotswap switches
 - "Relaxed" choc spacing: a compromise between MX and choc
