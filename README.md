@@ -21,8 +21,8 @@
 - 2 identical [PCBs][pcb] (can be printed at [JLC][jlc])
 - Top and bottom [3D printed cases][case] for each half
 - 2 [XIAO BLE][xiao] processors
-- 2 [EVQ-PUC02K momentary switches][reset] for reset
-- 2 [MSK12C02 slide switch][power] for the battery
+- 2 [Panasonic EVQ-PUC02K momentary switches][reset] for reset
+- 2 [Alps SSSS8 surface mount slide switch][power] for the battery
 - 2 [3.7v 250mAh 502030 rechargeable LiPo battery][battery]
 - 42 SOD-123 [1N4148W SMD diodes][diodes]
 - 42 Kailh [Choc Hot Swap Sockets][sockets]
@@ -35,7 +35,7 @@
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
-[diodes]: https://splitkb.com/collections/keyboard-parts/products/smd-diodes
+[diodes]: https://typeractive.xyz/products/smd-diodes
 [ergogen]: https://ergogen.xyz
 [firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
@@ -43,8 +43,8 @@
 [keycaps]: https://lowprokb.ca/collections/keycaps/products/mbk-low-profile-pbt-blank-keycaps
 [ohl]: LICENSE.txt
 [pcb]: pcb/lintilla-gerbers.zip
-[power]: https://www.lcsc.com/product-detail/Toggle-Switches_SHOU-HAN-MSK12C02_C431540.html
-[reset]: https://www.digikey.com/en/products/detail/panasonic-electronic-components/EVQ-PUC02K/286336
+[power]: https://typeractive.xyz/products/power-switch
+[reset]: https://typeractive.xyz/products/reset-button
 [screws]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
 [sockets]: https://lowprokb.ca/collections/parts/products/kalih-choc-hot-swap-sockets
 [switches]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
