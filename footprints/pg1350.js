@@ -78,6 +78,10 @@ module.exports = {
           (pad ${pin1} smd rect (at ${def_pos}8.275 -3.75 ${p.r}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask) ${net1})
           (pad ${pin2} smd rect (at ${def_neg}3.275 -5.95 ${p.r}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask) ${net2})
           ${vias}
+
+          ${'' /* corner mark */}
+          (fp_line (start ${def_pos}2.5 -1.7) (end ${def_pos}7.3 -1.7) (layer ${def_side}.SilkS) (width 0.15))
+          (fp_line (start ${def_pos}7 -1.7) (end ${def_pos}7 -2.7) (layer ${def_side}.SilkS) (width 0.15))
         `
       } else {
         return `
@@ -88,13 +92,11 @@ module.exports = {
       }
     }
 
-    const reverse = p.reverse ? pins('', '-', 'F') : ''
-
     return `
       ${standard}
       ${p.keycaps ? keycap : ''}
       ${pins('-', '', 'B')}
-      ${reverse}
+      ${p.reverse ? pins('', '-', 'F') : ''}
       )
     `
   }

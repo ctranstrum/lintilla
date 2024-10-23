@@ -1,6 +1,6 @@
 meta:
   author: chad@transtrum.net
-  version: &version v0.1
+  version: &version v1.0
   repository: &repo https://github.com/ctranstrum/lintilla
 
   # Depending on where you are ordering from, uncomment or edit one of these:
@@ -189,7 +189,7 @@ points:
     screw_top_right:
       anchor:
         ref: matrix_inner_top
-        shift: [hdx + 3, hdy - 3]
+        shift: [hdx + 2, hdy - 3]
       key:
         tags: [screw, hardware]
     screw_bottom_right:
@@ -201,10 +201,6 @@ points:
 
 
 outlines:
-  _flat_block:
-    - what: rectangle
-      size: 500
-
   # Get the basic PCB outline
   _raw:
     - what: rectangle
@@ -296,13 +292,6 @@ outlines:
     - -_xiao_bottom_pads
     - -_battery_cutout
 
-  case_cutout_outline:
-    - pcb_fill
-    # hollow out under the battery
-    - -_battery_cutout
-    # and under the center of the xiao
-    - -_xiao_bottom_pads
-
   # Now set up the holes in the plate for the switches
   _switch_outline_holes:
     - what: rectangle
@@ -318,39 +307,11 @@ outlines:
       corner: 1
 
   # An indentation to fit the hotswap tool beneath each switch
-  _swaptool1:
+  _swaptool:
     - what: rectangle
       where: key
       bound: false
-      size: [3.5, 17]
-      corner: 1
-
-  _swaptool2:
-    - what: rectangle
-      where: key
-      bound: false
-      size: [3.5, 17.4]
-      corner: 1
-
-  _swaptool3:
-    - what: rectangle
-      where: key
-      bound: false
-      size: [3.5, 17.8]
-      corner: 1
-
-  _swaptool4:
-    - what: rectangle
-      where: key
-      bound: false
-      size: [3.5, 18.2]
-      corner: 1
-
-  _swaptool5:
-    - what: rectangle
-      where: key
-      bound: false
-      size: [3.5, 18.6]
+      size: [3.5, 18.7]
       corner: 1
 
   _switch_holes:
@@ -547,19 +508,17 @@ outlines:
     - what: outline
       name: _bumper
       where: bumper_left
-      adjust.shift: [-6, 6]
+      adjust.shift: [-5.5, 5.5]
 
   _bumpers_right:
     - what: outline
       name: _bumper
       where: bumper_right
-      adjust.shift: [6, 6]
+      adjust.shift: [5.5, 5.5]
 
   _bumpers:
-    - what: outline
-      name: _bumpers_left
-    - what: outline
-      name: _bumpers_right
+    - _bumpers_left
+    - _bumpers_right
 
   _hex_nut_angle:
     - what: rectangle
@@ -574,44 +533,44 @@ outlines:
       name: _hex_nut_angle
       adjust.rotate: -60
 
-  hex_nuts:
+  _hex_nuts:
     - what: outline
       name: _hex_nut
       where: screw
 
-  screw_outline:
+  _screw_outline:
     - what: circle
       radius: 2.25
       where: screw
 
-  screw_shaft:
+  _screw_shaft:
     - what: circle
       radius: 1.2
       where: screw
 
   _countersink1:
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       expand: 1
 
   _countersink2:
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       expand: 0.8
 
   _countersink3:
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       expand: 0.6
 
   _countersink4:
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       expand: 0.4
 
   _countersink5:
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       expand: 0.2
 
   _reset_model:
@@ -673,21 +632,22 @@ cases:
       extrude: 0.2
       shift: [0, 0, 0.8]
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       extrude: 2.2
       shift: [0, 0, 1]
 
   _flat_screw:
     - what: outline
-      name: screw_outline
+      name: _screw_outline
       extrude: 1.2
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       extrude: 2
       shift: [0, 0, 1.2]
 
-  # Let's get a model of the PCB
-  mock_pcb:
+  # Let's get a model of the PCB for testing
+  # just remove the underscore in front to enable
+  _mock_pcb:
     - what: outline
       name: pcb_outline
       extrude: 1.6
@@ -700,12 +660,12 @@ cases:
       extrude: 1.6
       operation: subtract
     - what: outline
-      name: screw_shaft
+      name: _screw_shaft
       extrude: 1.6
       operation: subtract
 
-  mock_pcb_with_components:
-    - mock_pcb
+  _mock_pcb_with_components:
+    - _mock_pcb
     - what: outline
       name: socket_posts_model
       extrude: 1.6
@@ -726,27 +686,6 @@ cases:
       extrude: 1.5
       shift: [0, 0, 1.6]
 
-  _hotswap_tool_holes:
-    - what: outline
-      name: _swaptool5
-      extrude: 0.2
-    - what: outline
-      name: _swaptool4
-      extrude: 0.2
-      shift: [0, 0, 0.2]
-    - what: outline
-      name: _swaptool3
-      extrude: 0.2
-      shift: [0, 0, 0.4]
-    - what: outline
-      name: _swaptool2
-      extrude: 0.2
-      shift: [0, 0, 0.6]
-    - what: outline
-      name: _swaptool1
-      extrude: 0.2
-      shift: [0, 0, 0.8]
-
   # Simple sandwich case is easy
   _top:
     - what: outline
@@ -757,8 +696,9 @@ cases:
       extrude: 0.9
       shift: [0, 0, 1.3]
       operation: subtract
-    - what: case
-      name: _hotswap_tool_holes
+    - what: outline
+      name: _swaptool
+      extrude: 1
       operation: subtract
     # hollow out under the xiao
     - what: outline
@@ -779,7 +719,7 @@ cases:
       operation: subtract
     # Cut out for the hex nuts
     - what: outline
-      name: hex_nuts
+      name: _hex_nuts
       extrude: 1.6
       shift: [0, 0, 0.6]
       operation: subtract
@@ -904,6 +844,11 @@ pcbs:
         adjust.shift: [0, -12]
         params.text: XIAO BLE FACE DOWN
 
+      battery_wire_guide:
+        what: arc
+        where: battery
+        adjust.shift: [-12, -15]
+
       xiao_bat_pos_front:
         what: pad
         where: battery
@@ -911,9 +856,9 @@ pcbs:
         params:
           side: F
           net: BAT+
-          text: +
-          align: down
+          text: BAT+
           shape: circle
+          align: right
           width: 2
           height: 2
 
@@ -924,8 +869,7 @@ pcbs:
         params:
           side: B
           net: BAT+
-          text: +
-          align: down
+          text: BAT+
           shape: circle
           width: 2
           height: 2
@@ -939,20 +883,8 @@ pcbs:
       xiao_bat_pos_via_far:
         what: via
         where: matrix_inner_home
-        adjust.shift: [hdx, 1]
+        adjust.shift: [hdx -1.5, 1.25]
         params.net: BAT+
-
-      xiao_bat_neg:
-        what: pad
-        where:
-          ref: battery
-          shift: [0, 19]
-        params:
-          net: BAT-
-          text: "-"
-          align: down
-          width: 2
-          height: 2
 
       xiao_reset_front:
         what: pad
@@ -981,30 +913,45 @@ pcbs:
           width: 2
           height: 2
 
-      xiao_reset_via:
+      xiao_reset_via_near:
         what: via
         where: battery
         adjust.shift: [-8, 19.75]
         params.net: RST
 
+      xiao_reset_via_far:
+        what: via
+        where: matrix_index_home
+        adjust.shift: [hdx -1.5, -0.3]
+        params.net: RST
+
       bat_note:
         what: text
         where: battery
-        adjust.shift: [-12, -18]
+        adjust.shift: [12, -18.5]
         params:
           text: BATTERY 5 x 20 x 30 mm
+          justify: right
+
+      solder_note:
+        what: text
+        where: matrix_pinky_bottom
+        adjust.shift: [dx, -hdy]
+        params:
+          text: solder all components same side
           justify: left
 
       bat_raw_pos:
         what: pad
         where: battery
         adjust:
-          shift: [-14, -13.5]
-          rotate: 90
+          shift: [-14, -10]
+          rotate: -90
         params:
           net: RAW
           text: BAT+
           shape: circle
+          align: right
           width: 2
           height: 2
 
@@ -1018,10 +965,9 @@ pcbs:
         what: pad
         where: battery
         adjust:
-          shift: [-14, -10]
-          rotate: -90
+          shift: [-10, -19]
         params:
-          net: BAT-
+          net: GND
           text: BAT-
           width: 2
           height: 2
@@ -1047,12 +993,6 @@ pcbs:
         where: reset
         adjust.shift: [6, 1]
         params.text: RESET
-
-      reset_via:
-        what: via
-        where: matrix_index_home
-        adjust.shift: [hdx, -0.5]
-        params.net: RST
 
       power_front:
         what: trislider
@@ -1106,6 +1046,7 @@ pcbs:
         params:
           side: F
           text: Lintilla
+          layer: Cu
           size: 3
           thickness: 0.5
 
@@ -1116,6 +1057,7 @@ pcbs:
         params:
           side: B
           text: Allitnil
+          layer: Cu
           size: 3
           thickness: 0.5
 

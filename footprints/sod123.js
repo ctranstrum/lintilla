@@ -10,10 +10,10 @@ module.exports = {
   body: p => {
     // SMD pads on both sides: SOD-123 footprint
     const smdPads = p.smd ? `
-      (pad 1 smd rect (at -1.65 0 ${p.r}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.to})
-      (pad 2 smd rect (at 1.65 0 ${p.r}) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) ${p.from})
-      (pad 1 smd rect (at -1.65 0 ${p.r}) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) ${p.to})
-      (pad 2 smd rect (at 1.65 0 ${p.r}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.from})
+      (pad 1 smd rect (at -1.65 0 ${p.r}) (size 1.2 1.2) (layers F.Cu F.Paste F.Mask) ${p.to})
+      (pad 2 smd rect (at 1.65 0 ${p.r}) (size 1.2 1.2) (layers B.Cu B.Paste B.Mask) ${p.from})
+      (pad 1 smd rect (at -1.65 0 ${p.r}) (size 1.2 1.2) (layers B.Cu B.Paste B.Mask) ${p.to})
+      (pad 2 smd rect (at 1.65 0 ${p.r}) (size 1.2 1.2) (layers F.Cu F.Paste F.Mask) ${p.from})
     ` : '';
 
     // THT terminals
