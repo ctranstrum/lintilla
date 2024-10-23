@@ -1,5 +1,7 @@
 # Lintilla Keyboard
 
+![Lintilla Keyboard](images/lintilla-keyboard.jpg)
+![Lintilla side view](images/lintilla-side-view.jpg)
 ![Lintilla PCB](images/pcb-lintilla.jpg)
 
 - 42 key wireless split ergo keyboard with splay
