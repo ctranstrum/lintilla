@@ -12,7 +12,7 @@
 - Wireless first design using [ZMK][zmk] [firmware][firmware]
 - Reversible PCB designed with [ergogen][ergogen]
 - Soldering is simple: SMD components all on a single side of the board for each half
-- Internal space (5.4 x 24 x 34) for a "large" 502030 250mAh battery
+- Internal space (5.4 x 24 x 34 mm) for a "large" 502030 250mAh battery
 - Licensed under the [CERN Open Hardware License v2][ohl]
 - All source files available, so you can tweak the design if needed
 
@@ -31,12 +31,14 @@
 - 8 [M2 hex nuts][hexnuts]
 - 8 [M2 x 6mm countersunk screws][screws]
 - 8 [6mm x 1.5mm bumpons][bumpons]
+- a very short length of [1.75mm transparent 3D printer filament][filament]
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
 [diodes]: https://typeractive.xyz/products/smd-diodes
 [ergogen]: https://ergogen.xyz
+[filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
 [jlc]: https://jlcpcb.com
@@ -46,7 +48,7 @@
 [power]: https://typeractive.xyz/products/power-switch
 [reset]: https://typeractive.xyz/products/reset-button
 [screws]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
-[sockets]: https://lowprokb.ca/collections/parts/products/kalih-choc-hot-swap-sockets
+[sockets]: https://typeractive.xyz/products/hotswap-sockets?variant=45742200324327
 [switches]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk]: https://zmk.dev
