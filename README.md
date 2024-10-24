@@ -21,20 +21,22 @@
 
 Want to build one? You will need to obtain the following components:
 
-- 2 identical [PCBs][pcb] (can be printed at [JLC][jlc])
-- Top and bottom [3D printed cases][case] for each half
-- 2 [XIAO BLE][xiao] processors
-- 2 [Panasonic EVQ-PUC02K momentary switches][reset] for reset
-- 2 [Alps SSSS8 surface mount slide switch][power] for the battery
-- 2 [3.7v 250mAh 502030 rechargeable LiPo battery][battery]
-- 42 SOD-123 [1N4148W SMD diodes][diodes]
-- 42 Kailh [Choc Hot Swap Sockets][sockets]
-- 42 [Choc v1 switches][switches]
-- 42 [Choc v1 keycaps][keycaps]
-- 8 [M2 hex nuts][hexnuts]
-- 8 [M2 x 6mm countersunk screws][screws]
-- 8 [6mm x 1.5mm bumpons][bumpons]
-- about 5-6mm of [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide
+| Qty    | Description |
+| ====== | =========== |
+| 2      | identical [PCBs][pcb] (can be printed at [JLC][jlc]) |
+| 4      | [3D printed cases][case] for each half |
+| 2      | [XIAO BLE][xiao] processors |
+| 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for reset |
+| 2      | [Alps SSSS811101 SPDT slide switch][power] for the battery |
+| 2      | [3.7v 250mAh 502030 rechargeable LiPo battery][battery] |
+| 42     | SOD-123 [1N4148W SMD diodes][diodes] |
+| 42     | Kailh [Choc Hot Swap Sockets][sockets] |
+| 42     | [Choc v1 switches][switches] |
+| 42     | [Choc v1 keycaps][keycaps] |
+| 8      | [M2 hex nuts][hexnuts] |
+| 8      | [M2 x 6mm countersunk screws][screws] |
+| 8      | [6mm x 1.5mm bumpons][bumpons] |
+| ~5-6mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide |
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
