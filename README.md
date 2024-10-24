@@ -23,16 +23,16 @@ Want to build one? You will need to obtain the following components:
 
 | Qty    | Description |
 | ------ | ----------- |
-| 2      | identical [PCBs][pcb] (can be printed at [JLC][jlc]) |
+| 2      | identical [Lintilla PCBs][pcb] (can be printed by uploading the zip file to [JLC][jlc]) |
 | 4      | [3D printed cases][case], top and bottom for each half |
 | 2      | [XIAO BLE][xiao] processors |
-| 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for reset |
-| 2      | [Alps SSSS811101 SPDT slide switch][power] for the battery |
-| 2      | [3.7v 250mAh 502030 rechargeable LiPo battery][battery] |
+| 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for the reset button |
+| 2      | [Alps SSSS811101 SPDT slide switches][power] for the battery on/off |
+| 2      | [3.7v 250mAh 502030 rechargeable LiPo batteries][battery] |
 | 42     | SOD-123 [1N4148W SMD diodes][diodes] |
 | 42     | Kailh [Choc Hot Swap Sockets][sockets] |
-| 42     | [Choc v1 switches][switches] |
-| 42     | [Choc v1 keycaps][keycaps] |
+| 42     | [Choc v1 switches][switches] of your choice |
+| 42     | [Choc v1 keycaps][keycaps] of your choice (note: full MX-sized keycaps may be too big) |
 | 8      | [M2 hex nuts][hexnuts] |
 | 8      | [M2 x 6mm countersunk screws][screws] |
 | 8      | [6mm x 1.5mm bumpons][bumpons] |
