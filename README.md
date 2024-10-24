@@ -24,7 +24,7 @@ Want to build one? You will need to obtain the following components:
 | Qty    | Description |
 | ------ | ----------- |
 | 2      | identical [PCBs][pcb] (can be printed at [JLC][jlc]) |
-| 4      | [3D printed cases][case] for each half |
+| 4      | [3D printed cases][case], top and bottom for each half |
 | 2      | [XIAO BLE][xiao] processors |
 | 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for reset |
 | 2      | [Alps SSSS811101 SPDT slide switch][power] for the battery |
