@@ -1,21 +1,41 @@
 # Lintilla Keyboard
 
 ![Lintilla Keyboard](images/lintilla-keyboard.jpg)
-![Lintilla side view](images/lintilla-side-view.jpg)
-![Lintilla PCB](images/pcb-lintilla.jpg)
+
+## Features
 
 - 42 key wireless split ergo keyboard with splay and "reachy" thumbs
 - Seeed Studio [XIAO BLE][xiao] microcontroller
 - Choc v1 hotswap switches
 - "Relaxed" choc spacing: a compromise between MX and choc
-- 7mm ultra low profile "snug sandwich" case with no exposed components on top or bottom
+- 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
-- Wireless first design using [ZMK][zmk] [firmware][firmware]
-- [Reversible](images/pcb-allitnil.jpg) PCB designed with [ergogen][ergogen]
+- Wireless-first design using [ZMK][zmk] [firmware][firmware]
+- [Reversible](images/pcb-allitnil.jpg) [PCB](images/pcb-lintilla.jpg) designed with [ergogen][ergogen]
 - Soldering is simple: SMD components all on a single side of the board for each half
 - Internal space (5.4 x 24 x 34 mm) for a "large" 502030 250mAh battery
 - Licensed under the [CERN Open Hardware License v2][ohl]
 - All source files available, so you can tweak the design if needed
+
+![Lintilla side view](images/lintilla-side-view.jpg)
+
+## Design goals
+
+- Low cost wireless
+  - xiao ble is only $10 per controller compared to $25 for the nice!nano
+  - Reversible PCB for the cheapest manufacturing option (I ordered a set of 5 boards, the minimum order, for under $10)
+- Ergonomic design
+  - keys are placed naturally where (my) fingers at rest fall for the ultimate comfort
+  - split keyboard means you can place each half where it best works for you
+- Low profile 3D printable case
+  - case is only 7mm high and each side comes in two separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
+  - bumpons are inset into the case 1mm to minimize their height
+  - choc v1 hotswap switches are some of the shortest commonly available
+- Electrostatic protection
+  - unlike other ultra-low-profile cases, no electronics are exposed on either the bottom or the top of the case
+  - on the side of the case, the reset button and power switch are available, and the usb port is accessible
+
+![Lintilla PCB](images/pcb-lintilla.jpg)
 
 ## Build Your Own
 
@@ -23,7 +43,7 @@ Want to build one? You will need to obtain the following components:
 
 | Qty    | Description |
 | ------ | ----------- |
-| 2      | identical [Lintilla PCBs][pcb] (can be printed by uploading the zip file to [JLC][jlc]) |
+| 2      | identical [Lintilla PCBs][pcb] (can be printed by uploading the [zip file][pcb] to [JLC][jlc]) |
 | 4      | [3D printed cases][case], top and bottom for each half |
 | 2      | [XIAO BLE][xiao] processors |
 | 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for the reset button |
@@ -47,7 +67,7 @@ Want to build one? You will need to obtain the following components:
 [firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
 [jlc]: https://jlcpcb.com
-[keycaps]: https://lowprokb.ca/collections/keycaps/products/mbk-low-profile-pbt-blank-keycaps
+[keycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [ohl]: LICENSE.txt
 [pcb]: pcb/lintilla-gerbers.zip
 [power]: https://typeractive.xyz/products/power-switch
