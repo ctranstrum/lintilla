@@ -11,7 +11,7 @@
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
 - Wireless-first design using [ZMK][zmk] [firmware][firmware]
-- [Reversible](images/pcb-allitnil.jpg) [PCB](images/pcb-lintilla.jpg) designed with [ergogen][ergogen]
+- Jumperless [reversible](images/pcb-allitnil.jpg) [PCB](images/pcb-lintilla.jpg) designed with [ergogen][ergogen]
 - Soldering is simple: SMD components all on a single side of the board for each half
 - Internal space (5.4 x 24 x 34 mm) for a "large" 502030 250mAh battery
 - Licensed under the [CERN Open Hardware License v2][ohl]
@@ -41,22 +41,26 @@
 
 Want to build one? You will need to obtain the following components:
 
-| Qty    | Description |
-| ------ | ----------- |
+| Qty    | Description                                                                                    |
+| ------ | ---------------------------------------------------------------------------------------------- |
 | 2      | identical [Lintilla PCBs][pcb] (can be printed by uploading the [zip file][pcb] to [JLC][jlc]) |
-| 4      | [3D printed cases][case], top and bottom for each half |
-| 2      | [XIAO BLE][xiao] processors |
-| 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for the reset button |
-| 2      | [Alps SSSS811101 SPDT slide switches][power] for the battery on/off |
-| 2      | [3.7v 250mAh 502030 rechargeable LiPo batteries][battery] |
-| 42     | SOD-123 [1N4148W SMD diodes][diodes] |
-| 42     | Kailh [Choc Hot Swap Sockets][sockets] |
-| 42     | [Choc v1 switches][switches] of your choice |
-| 42     | [Choc v1 keycaps][keycaps] of your choice (note: full MX-sized keycaps may be too big) |
-| 8      | [M2 hex nuts][hexnuts] |
-| 8      | [M2 x 6mm countersunk screws][screws] |
-| 8      | [6mm x 1.5mm bumpons][bumpons] |
-| ~5-6mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide |
+| 4      | [3D printed cases][case], top and bottom for each half                                         |
+| 2      | [XIAO BLE][xiao] processors                                                                    |
+| 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for the reset button                          |
+| 2      | [Alps SSSS811101 SPDT slide switches][power] for the battery on/off                            |
+| 2      | [3.7v 250mAh 502030 rechargeable LiPo batteries][battery]                                      |
+| 42     | SOD-123 [1N4148W SMD diodes][diodes]                                                           |
+| 42     | Kailh [Choc Hot Swap Sockets][sockets]                                                         |
+| 42     | [Choc v1 switches][switches] of your choice                                                    |
+| 42     | [Choc v1 keycaps][keycaps] of your choice (note: full MX-sized keycaps may be too big)         |
+| 8      | [M2 hex nuts][hexnuts]                                                                         |
+| 8      | [M2 x 6mm countersunk screws][screws]                                                          |
+| 8      | [6mm x 1.5mm bumpons][bumpons]                                                                 |
+| ~5-6mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide       |
+
+## Firmware
+
+After you build the keyboard, you will need the [ZMK firmware][firmware].
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
