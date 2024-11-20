@@ -28,6 +28,11 @@ I used [JLC][jlcpcb] because--at least at the time of my order--their prices are
 To order, you can simply upload the [gerber zip file][gerber] to their website,
 accept all of the defaults, and wait a week or two for the boards to arrive.
 
+Since the PCB is reversible, in theory you could order just two of them, and you'd be able
+to build a complete keyboard. However, the minimum order at JLC is 5 copies, so you'll likely end up
+with enough PCBs to complete two and a half keyboards. I don't really have any advice for what to do with
+half a keyboard, but if you make two keyboards, you could give one to a friend!
+
 A few items that you may want to customize:
 
 - the color of the board; I printed mine in white, but whatever color you pick, the edges of the PCB will still be a little greenish
@@ -103,11 +108,12 @@ Next step is the hotswap sockets. Although electrically, they will work even if 
 the wrong way, it is important to look at the line on the silkscreen and align the hotswap
 socket so that the corner with the right angle is oriented to the line on the PCB.
 
-In the following picture, the blue square on the on SW19 shows the silkscreen line before
+In the following picture, the blue square on SW19 shows the silkscreen line before
 a hotswap socket is installed, the green square on SW20 shows a hotswap socket in the
-correct orientation where the silkscreen line is mostly hidden by the socket, and the red
-square on SW21 shows an incorrectly oriented hotswap socket, where the silkscreen line is
-clearly visible poking out around the edges of the socket.
+correct orientation where the silkscreen line is mostly hidden by the straight lines of
+the top edge of the socket, and the red square on SW21 shows an incorrectly oriented
+hotswap socket, where the silkscreen line is clearly visible poking out around the
+angled edges of the socket.
 
 ![hotswap socket orientation](images/hotswap-alignment.jpg)
 
@@ -261,7 +267,7 @@ Place the four nuts into the cutouts in the top case.
 
 Then place the PCB onto the case, components facing away from the top case, and align the edges.
 The xiao and the battery should slide easily into the hollows prepared for them and help with alignment.
-Put the bottom case on top, and use the screws to secure it to the PCB.
+Put the bottom case on top, and use four screws to secure it to the PCB.
 
 ![screw the bottom on](images/screws.jpg)
 
@@ -270,7 +276,7 @@ but the top of the case is only held in place by the pressure
 of the slight twisting of the nuts as you attached the screws,
 and it may be possible for it to be removed at this point.
 
-Flip the case over. If the top comes off at this point, simply put it back in place.
+Flip the case over. If the top comes off, simply put it back in place.
 
 ### Insert the switches and keycaps
 
@@ -300,21 +306,55 @@ You can grab the default firmware from the [firmware repository][firmware].
 To install it, attach each half one at a time to the computer by USB, double-tap the reset button,
 and then drag the firmware for that half to the device that appears as a thumb drive.
 
-Note, however, that the thumb drive is not actually a real thumb drive, and normal copy and paste operations
+![drag and drop to install](images/drag-and-drop-firmware.jpg)
+
+Note, however, that the "thumb drive" is not actually a real thumb drive, and normal copy and paste operations
 do not work as they do on a real thumb drive. Copying the file to the keyboard is really a command to the
 microcontroller to install firmware. As soon as the firmware is installed, the keyboard will reboot and start
 running the new firmware. This will make the "thumb drive" immediately disconnect from the computer, which
 is often seen as an error by the operating system.
 
+![ignore read/write error](images/ignore-write-error.jpg)
+
 But you are free to ignore that error and just start using the keyboard. Just don't try to copy anything that's
 not a firmware to the keyboard, and you should be fine.
 
+## Problems?
+
+For more information about using [ZMK][zmk], including how to use [ZMK Studio][zmkstudio],
+or how to configure your own [zmk repo][zmkrepo], please refer to the [ZMK docs][zmkdocs].
+
+If you still have the default keymap installed and want to update the layout with [ZMK Studio][zmkstudio],
+the "ZMK Studio unlock" key combination is accessed by two keys on the right half of the keyboard:
+hold down the extra key on the top right side (mapped by default as the MUTE key)
+and then press the middle thumb key (mapped by default as the SPACE key).
+Note that you will need to be using Chrome or Edge to get it to work.
+
+If a key isn't working, the first thing to look at is that the switch has been installed properly,
+and the pins aren't bent.
+
+If you need to correct any soldering,
+access to the bottom of the PCB is as simple as removing the four screws on the case.
+You do not necessarily need to remove all the switches.
+However, if you are doing extensive re-soldering work,
+it may be a good idea to fully remove the PCB from the case.
+
+One unexpected feature of the XIAO microcontroller is that the power switch must be "ON"
+in order for the battery to charge while plugged into a USB-C cable.
+Remember: sliding the power switch toward the USB port turns the keyboard on,
+while sliding it away from the USB port turns it off.
+
 [case]: cases/
+[firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
 [gerber]: pcb/lintilla-gerbers.zip
 [how-to-solder]: https://www.google.com/search?q=youtube+how+to+solder
 [jlc3dp]: https://jlc3dp.com/
-[jlcbcb]: https://jlcpcb.com/
+[jlcpcb]: https://jlcpcb.com/
 [kester]: https://typeractive.xyz/products/kester-solder-wire-tube
 [pinecil]: https://typeractive.xyz/products/pinecil
 [soldering101]: https://www.google.com/search?q=youtube+soldering+101
 [splitkb-build-guide]: https://docs.splitkb.com/product-guides/aurora-series/build-guide
+[zmk]: https://zmk.dev/
+[zmkdocs]: https://zmk.dev/docs
+[zmkrepo]: https://zmk.dev/docs/user-setup
+[zmkstudio]: https://zmk.studio/
