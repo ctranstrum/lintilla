@@ -4,13 +4,13 @@
 
 ## Features
 
-- 42 key wireless split ergo keyboard with splay and "reachy" thumbs
+- 42 key wireless split ergo keyboard with aggressive pinky stagger, splay, and "reachy" thumbs
 - Seeed Studio [XIAO BLE][xiao] microcontroller
 - Choc v1 hotswap switches
 - "Relaxed" choc spacing: a compromise between MX and choc
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
-- Wireless-first design using [ZMK][zmk] [firmware][firmware]
+- Wireless-first design using [ZMK][zmk] [firmware][firmware] (including [ZMK Studio][studio])
 - Jumperless [reversible](images/pcb-allitnil.jpg) [PCB](images/pcb-lintilla.jpg) designed with [ergogen][ergogen]
 - Soldering is simple: SMD components all on a single side of the board for each half
 - Internal space (5.4 x 24 x 34 mm) for a "large" 502030 250mAh battery
@@ -24,18 +24,26 @@
 - Low cost wireless
   - xiao ble is only $10 per controller compared to $25 for the nice!nano
   - Reversible PCB for the cheapest manufacturing option (I ordered a set of 5 boards, the minimum order, for under $10)
-- Ergonomic design
-  - keys are placed naturally where (my) fingers at rest fall for the ultimate comfort
+  - Big battery and an option for a dongle, so you can run for months without recharging
+- Ergonomic design for the ultimate comfort
   - split keyboard means you can place each half where it best works for you
+  - keys are placed where (my) fingers at rest naturally fall
+    - when fingers extend, they splay, so the keys also splay outward to follow the fingers
+    - the pinky is shorter than the other fingers, so the pinky keys are placed lower to match
+    - unlike most ergonomic boards, the thumb doesn't have to tuck below the palm to reach the thumb keys
+  - includes all source files, so if your fingers are slightly different, with a little work you can adjust the keyboard to fit you exactly
 - Low profile 3D printable case
   - case is only 7mm high and each side comes in two separate pieces, each largely flat on one side for easy FDM printing with minimal fuss
-  - bumpons are inset into the case 1mm to minimize their height
+  - bumpons are inset into the case 1mm to minimize their height; they add only 1/2mm in height
   - choc v1 hotswap switches are some of the shortest commonly available
+- Hotswappable
+  - keycaps and switches can be easily removed and exchanged so you can fine tune the feel
+  - the case is designed to hold tight to the switches, while offering a switch-puller groove that allows for safe and easy removal
 - Electrostatic protection
   - unlike other ultra-low-profile cases, no electronics are exposed on either the bottom or the top of the case
   - on the side of the case, the reset button and power switch are available, and the usb port is accessible
 
-![Lintilla PCB](images/pcb-lintilla.jpg)
+![low profile case](images/thin.jpg)
 
 ## Build Your Own
 
@@ -58,11 +66,14 @@ Want to build one? You will need to obtain the following components:
 | 8      | [6mm x 1.5mm bumpons][bumpons]                                                                 |
 | ~5-6mm | [1.75mm transparent 3D printer filament][filament] for the "fiber optic" led light guide       |
 
+Once you have these items, you can follow the instructions in the [Build Guide][buildguide].
+
 ## Firmware
 
 After you build the keyboard, you will need the [ZMK firmware][firmware].
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
+[buildguide]: BUILD.md
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
 [diodes]: https://typeractive.xyz/products/smd-diodes
@@ -79,6 +90,7 @@ After you build the keyboard, you will need the [ZMK firmware][firmware].
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [screws]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
 [sockets]: https://typeractive.xyz/products/hotswap-sockets?variant=45742200324327
+[studio]: https://zmk.dev/docs/features/studio
 [switches]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches
 [xiao]: https://wiki.seeedstudio.com/XIAO_BLE/
 [zmk]: https://zmk.dev
