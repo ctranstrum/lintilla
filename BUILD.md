@@ -33,9 +33,9 @@ you are working on the right half of the keyboard,
 and when you are soldering components on the side labeled "Allitnil"
 you are working on the left half of the keyboard.
 
-| Lintilla (right half)                | Allitnil (left half)             |
-| ------------------------------------ | -------------------------------- |
-| ![Lintilla](images/lintilla-pcb.jpg) | ![Allitnil](images/allitnil.jpg) |
+| Lintilla (right half)                | Allitnil (left half)                 |
+| ------------------------------------ | ------------------------------------ |
+| ![Lintilla](images/lintilla-pcb.jpg) | ![Allitnil](images/allitnil-pcb.jpg) |
 
 ## Diodes only work one direction
 
