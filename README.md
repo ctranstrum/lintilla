@@ -72,17 +72,30 @@ Once you have these items, you can follow the instructions in the [Build Guide][
 
 After you build the keyboard, you will need the [ZMK firmware][firmware].
 
+## Credits and inspiration
+
+- [ZMK][zmk]: for the firmware
+- [Ergogen][ergogen]: for the tools to quickly iterate over the design
+- [Ergonaut One][ergonautone]: for the elegant approach to a xiao-based reversible PCB
+- [Klor][klor]: for the almost-perfect key layout
+
+## In the wild
+
+Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
+
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
 [buildguide]: BUILD.md
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
 [diodes]: https://typeractive.xyz/products/smd-diodes
 [ergogen]: https://ergogen.xyz
+[ergonautone]: https://ergonautkb.com/docs/keyboards/ergonaut-one/intro/
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
 [jlc]: https://jlcpcb.com
 [keycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
+[klor]: https://github.com/GEIGEIGEIST/KLOR
 [ohl]: LICENSE.txt
 [pcb]: pcb/lintilla-gerbers.zip
 [power]: https://typeractive.xyz/products/power-switch

@@ -176,7 +176,7 @@ The top edge of the XIAO should be even with the edge of the PCB,
 and along both sides of the XIAO you should be able to see an equal amount of each pad sticking out.
 
 Once one corner is soldered and the alignment is looking good,
-solder the other corner to firmly fix it in place,
+solder the opposite corner to firmly fix it in place,
 and then solder each remaining pad one by one,
 placing the tip of the soldering iron on the visible portion of
 the PCB pad and against the side of the XIAO's castellated pad.
