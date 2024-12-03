@@ -19,6 +19,8 @@ You should ideally have access to:
 - some [good quality solder][kester]
 - a decent hands-free magnifying glass
 - precision tweezers
+- wire cutter / stripper
+- isopropyl alcohol and an old toothbrush
 
 ## Getting the PCB
 
