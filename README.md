@@ -56,7 +56,7 @@ Want to build one? You will need to obtain the following components:
 | 2      | [XIAO BLE][xiao] processors                                                                    |
 | 2      | [Panasonic EVQ-PUC02K momentary switches][reset] for the reset button                          |
 | 2      | [Alps SSSS811101 SPDT slide switches][power] for the battery on/off                            |
-| 2      | [3.7v 250mAh 502030 rechargeable LiPo batteries][battery]                                      |
+| 2      | [3.7v 250mAh 502030 rechargeable LiPo batteries][battery] (max internal space: 5.4x24x34mm)    |
 | 42     | SOD-123 [1N4148W SMD diodes][diodes]                                                           |
 | 42     | Kailh [Choc Hot Swap Sockets][sockets]                                                         |
 | 42     | [Choc v1 switches][switches] of your choice                                                    |
