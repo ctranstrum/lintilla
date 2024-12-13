@@ -60,7 +60,7 @@ Want to build one? You will need to obtain the following components:
 | 42     | SOD-123 [1N4148W SMD diodes][diodes]                                                           |
 | 42     | Kailh [Choc Hot Swap Sockets][sockets]                                                         |
 | 42     | [Choc v1 switches][switches] of your choice                                                    |
-| 42     | [Choc v1 keycaps][keycaps] of your choice (note: full MX-sized keycaps may be too big)         |
+| 42     | [Choc v1 keycaps][keycaps] of your choice (note: full MX-sized keycaps will be too big)        |
 | 8      | [M2 hex nuts][hexnuts]                                                                         |
 | 8      | [M2 x 6mm countersunk screws][screws]                                                          |
 | 8      | [6mm x 1.5mm bumpons][bumpons]                                                                 |
