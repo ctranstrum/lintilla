@@ -7,7 +7,7 @@
 - 42 key wireless split ergo keyboard with aggressive pinky stagger, splay, and "reachy" thumbs
 - Seeed Studio [XIAO BLE][xiao] microcontroller
 - Choc v1 hotswap switches
-- "Relaxed" choc spacing: a compromise between MX and choc
+- "Relaxed" (18.5x18) choc spacing: a compromise between MX (19x19) and choc (18x17)
 - 7mm low-profile "snug sandwich" case with no exposed components on top or bottom
 - [RGB LED status][rgbled] visible on the top of the case
 - Wireless-first design using [ZMK][zmk] [firmware][firmware] (including [ZMK Studio][studio])
