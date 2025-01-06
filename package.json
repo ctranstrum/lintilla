@@ -1,7 +1,7 @@
 {
-  "name": "ergokb",
+  "name": "lintilla",
   "version": "1.0.0",
-  "description": "Ergonomic Keyboard Design",
+  "description": "Lintilla Keyboard Design",
   "main": "index.js",
   "scripts": {
     "all": "npm run ergo && npm run stl",

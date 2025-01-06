@@ -4,7 +4,7 @@ meta:
   repository: &repo https://github.com/ctranstrum/lintilla
 
   # Depending on where you are ordering from, uncomment or edit one of these:
-  order_num_template: &order_text JLCJLCJLCJLC   # for ordering from JLCpcb.com
+  order_num_template: &order_text JLCJLCJLCJLC # for ordering from JLCpcb.com
   # order_num_template: &order_text WayWayWay    # for ordering from PCBway.com
   # order_num_template: &order_text ""   # remove the order number text completely
 
@@ -198,7 +198,6 @@ points:
         shift: [hdx + 2, hdy]
       key:
         tags: [screw, hardware]
-
 
 outlines:
   # Get the basic PCB outline
@@ -827,7 +826,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{rowpin}}"
           tht: false
-          via: 'pad'
+          via: "pad"
 
       xiao_mcu:
         what: xiao
@@ -958,7 +957,7 @@ pcbs:
       bat_raw_pos_via:
         what: via
         where: matrix_inner_bottom
-        adjust.shift: [-hdx, -hdy ]
+        adjust.shift: [-hdx, -hdy]
         params.net: RAW
 
       bat_raw_neg:

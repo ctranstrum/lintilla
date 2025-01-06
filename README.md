@@ -81,6 +81,8 @@ After you build the keyboard, you will need the [ZMK firmware][firmware].
 
 ## In the wild
 
+![first Lintilla in the wild](images/wild-lintilla-1.jpg)
+
 Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
