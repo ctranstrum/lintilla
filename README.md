@@ -83,6 +83,8 @@ After you build the keyboard, you will need the [ZMK firmware][firmware].
 
 ![first Lintilla in the wild](images/wild-lintilla-1.jpg)
 
+cairn's Lintilla build, using JLC Black Resin for the case, with Nocturnal switches and Chicago Steno keycaps.
+
 Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
