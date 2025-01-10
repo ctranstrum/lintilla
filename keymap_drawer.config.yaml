@@ -1,0 +1,53 @@
+parse_config:
+  modifier_fn_map:
+    left_shift: ⇧
+    left_alt: ⌥
+    right_alt: Alt
+    left_ctrl: ^
+    left_gui: ⌘
+    keycode_combiner: "{mods}{key}"
+    mod_combiner: "{mod_1}{mod_2}"
+  raw_binding_map:
+    "&bt_sel 0": BT 1
+    "&bt_sel 1": BT 2
+    "&bt_sel 2": BT 3
+    "&bt_sel 3": BT 4
+    "&bt_sel 4": BT 5
+    "&bt_clr 0": clear 1
+    "&bt_clr 1": clear 2
+    "&bt_clr 2": clear 3
+    "&bt_clr 3": clear 4
+    "&bt_clr 4": clear 5
+    "&caps_word": caps word
+    "&flash 6": flash
+    "&kp BSPC": ⌫
+    "&kp DEL": ⌦
+    "&kp ESC": Esc
+    "&kp RET": ↵
+    "&kp TAB": ⇥
+    "&kp UP": ↑
+    "&kp DOWN": ↓
+    "&kp LEFT": ←
+    "&kp RIGHT": →
+    "&kp HOME": Home
+    "&kp END": End
+    "&kp PG_UP": PgUp
+    "&kp PG_DN": PgDn
+    "&kp LALT": ⌥
+    "&kp RALT": Alt
+    "&kp LCTL": ^
+    "&kp LCTRL": ^
+    "&kp LGUI": ⌘
+    "&kp LSHFT": ⇧
+    "&kp C_PP": ⏯
+    "&kp C_PREV": ⏮
+    "&kp C_NEXT": ⏭
+    "&kp SPC": ␣
+    "&kp CAPS": Caps 🔒
+    "&kp KP_NUM": Num 🔒
+    "&sk LSHIFT": sticky ⇧
+    "&studio_unlock": ZMK Studio
+    "&usb_sel": USB
+    GS(N4): screen shot
+    GCS(N4): screen copy
+    GC(Q): lock screen

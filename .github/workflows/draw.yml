@@ -1,19 +1,19 @@
 name: Draw ZMK keymaps
 on:
-  workflow_dispatch:  # can be triggered manually
-  push:               # automatically run on changes to following paths
+  workflow_dispatch: # can be triggered manually
+  push: # automatically run on changes to following paths
     paths:
       - "keymap_drawer.config.yaml"
-      - 'boards/*/*/*.keymap'
+      - "boards/*/*/*.keymap"
 
 jobs:
   draw:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
-      contents: write  # allow workflow to commit to the repo
+      contents: write # allow workflow to commit to the repo
     with:
-      keymap_patterns: "boards/shields/lintilla/*.keymap"        # path to the keymaps to parse
-      config_path: "keymap_drawer.config.yaml"  # config file, ignored if not exists
-      output_folder: "images"            # path to save produced SVG and keymap YAML files
-      parse_args: ""  # map of extra args to pass to `keymap parse`
-      draw_args: ""   # map of extra args to pass to `keymap draw`
+      keymap_patterns: "boards/shields/lintilla/*.keymap" # path to the keymaps to parse
+      config_path: "keymap_drawer.config.yaml" # config file, ignored if not exists
+      output_folder: "images" # path to save produced SVG and keymap YAML files
+      parse_args: "" # map of extra args to pass to `keymap parse`
+      draw_args: "lintilla:'--dts-layout boards/shields/lintilla/lintilla-layouts.dtsi'" # map of extra args to pass to `keymap draw`
