@@ -2,7 +2,7 @@ layers:
   Qwerty:
   - '&lp_mc'
   - {t: MUTE, h: keyboard}
-  - ESC
+  - Esc
   - Q
   - W
   - E
@@ -13,19 +13,19 @@ layers:
   - I
   - O
   - P
-  - BSPC
-  - {t: TAB, h: GLOBE}
-  - {t: A, h: LSHFT}
-  - {t: S, h: LCTRL}
-  - {t: D, h: LALT}
-  - {t: F, h: LGUI}
-  - {t: G, h: RALT}
-  - {t: H, h: RALT}
-  - {t: J, h: LGUI}
-  - {t: K, h: LALT}
-  - {t: L, h: LCTRL}
-  - {t: '''', h: LSHFT}
-  - {t: RET, h: GLOBE}
+  - ⌫
+  - {t: ⇥, h: GLOBE}
+  - {t: A, h: ⇧}
+  - {t: S, h: ^}
+  - {t: D, h: ⌥}
+  - {t: F, h: ⌘}
+  - {t: G, h: Alt}
+  - {t: H, h: Alt}
+  - {t: J, h: ⌘}
+  - {t: K, h: ⌥}
+  - {t: L, h: ^}
+  - {t: '''', h: ⇧}
+  - {t: ↵, h: GLOBE}
   - Z
   - X
   - C
@@ -37,14 +37,14 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: (, h: numpad}
-  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: sticky ⇧, h: navigation, s: caps word}
   - {t: '{', h: LCMD}
   - {t: '}', h: RCMD}
-  - {t: SPC, h: symbols}
-  - {t: ), h: LALT}
+  - {t: ␣, h: symbols}
+  - {t: ), h: ⌥}
   numpad:
   - ''
-  - DEL
+  - ⌦
   - ''
   - ''
   - ''
@@ -56,23 +56,23 @@ layers:
   - '8'
   - '9'
   - '-'
-  - BSPC
+  - ⌫
   - GLOBE
-  - {t: Ctl+A, h: LSHFT}
-  - LCTL
-  - LALT
-  - LGUI
-  - RALT
+  - {t: ^A, h: ⇧}
+  - ^
+  - ⌥
+  - ⌘
+  - Alt
   - '*'
   - '4'
   - '5'
   - '6'
   - +
-  - RET
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
+  - ↵
+  - ^Z
+  - ^X
+  - ^C
+  - ^V
   - ''
   - ':'
   - '1'
@@ -83,50 +83,50 @@ layers:
   - navigation
   - ''
   - ','
-  - SPC
+  - ␣
   - '0'
   navigation:
   - ''
-  - DEL
+  - ⌦
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - PG UP
+  - PgUp
   - ''
   - ''
   - ''
   - ''
-  - BSPC
+  - ⌫
   - GLOBE
   - LSFT
-  - LCTL
-  - LALT
-  - LGUI
-  - RALT
-  - HOME
-  - LEFT
-  - UP
-  - RIGHT
-  - END
-  - RET
+  - ^
+  - ⌥
+  - ⌘
+  - Alt
+  - Home
+  - ←
+  - ↑
+  - →
+  - End
+  - ↵
   - ''
   - ''
   - ''
   - ''
   - ''
-  - PG DN
+  - PgDn
   - ''
-  - DOWN
+  - ↓
   - ''
   - ''
   - numpad
   - {type: held}
   - ''
   - ''
-  - SPC
+  - ␣
   - ''
   function:
   - ''
@@ -145,10 +145,10 @@ layers:
   - ''
   - GLOBE
   - LSFT
-  - LCTL
-  - LALT
-  - LGUI
-  - RALT
+  - ^
+  - ⌥
+  - ⌘
+  - Alt
   - ''
   - F4
   - F5
@@ -192,10 +192,10 @@ layers:
   - '!'
   - '='
   - $
-  - RALT
-  - LGUI
-  - LALT
-  - LCTL
+  - Alt
+  - ⌘
+  - ⌥
+  - ^
   - ''
   - GLOBE
   - <
@@ -215,13 +215,13 @@ layers:
   - {type: held}
   - ''
   keyboard:
-  - '&flash 6'
+  - flash
   - {type: held}
   - BRI UP
   - ''
   - ''
-  - Gui+Sft+4
-  - Gui+Ctl+Sft+4
+  - screen shot
+  - screen copy
   - VOL UP
   - '&ind_con'
   - ''
@@ -230,11 +230,11 @@ layers:
   - ''
   - ''
   - BRI DN
-  - {t: '&bt_sel', h: '&bt_clr'}
-  - {t: '&bt_sel 1', h: '&bt_clr 1'}
-  - {t: '&bt_sel 2', h: '&bt_clr 2'}
-  - {t: '&bt_sel 3', h: '&bt_clr 3'}
-  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - {t: BT 4, h: clear 4}
+  - {t: BT 5, h: clear 5}
   - ''
   - ''
   - ''
@@ -243,7 +243,7 @@ layers:
   - ''
   - '&bootloader'
   - ''
-  - CAPS
+  - Caps 🔒
   - ''
   - VOL DN
   - ''
@@ -251,11 +251,11 @@ layers:
   - ''
   - ''
   - '&bootloader'
-  - PREV
-  - PP
-  - NEXT
+  - ⏮
+  - ⏯
+  - ⏭
   - ''
-  - '&studio_unlock'
+  - ZMK Studio
   - ''
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '']
