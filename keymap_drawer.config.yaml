@@ -8,6 +8,7 @@ parse_config:
     keycode_combiner: "{mods}{key}"
     mod_combiner: "{mod_1}{mod_2}"
   raw_binding_map:
+    "&bootloader": flash
     "&bt_sel 0": BT 1
     "&bt_sel 1": BT 2
     "&bt_sel 2": BT 3
@@ -19,7 +20,9 @@ parse_config:
     "&bt_clr 3": clear 4
     "&bt_clr 4": clear 5
     "&caps_word": caps word
-    "&flash 6": flash
+    "&flash 6": dongle flash
+    "&ind_bat": battery status
+    "&ind_con": BT status
     "&kp BSPC": ⌫
     "&kp DEL": ⌦
     "&kp ESC": Esc
@@ -33,11 +36,13 @@ parse_config:
     "&kp END": End
     "&kp PG_UP": PgUp
     "&kp PG_DN": PgDn
+    "&kb GLOBE": 🌐
     "&kp LALT": ⌥
     "&kp RALT": Alt
     "&kp LCTL": ^
     "&kp LCTRL": ^
     "&kp LGUI": ⌘
+    "&kp LSFT": ⇧
     "&kp LSHFT": ⇧
     "&kp C_PP": ⏯
     "&kp C_PREV": ⏮
@@ -45,6 +50,7 @@ parse_config:
     "&kp SPC": ␣
     "&kp CAPS": Caps 🔒
     "&kp KP_NUM": Num 🔒
+    "&lp_mc": Launchpad MissionCtrl
     "&sk LSHIFT": sticky ⇧
     "&studio_unlock": ZMK Studio
     "&usb_sel": USB
