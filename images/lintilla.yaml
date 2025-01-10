@@ -1,0 +1,261 @@
+layers:
+  Qwerty:
+  - '&lp_mc'
+  - {t: MUTE, h: keyboard}
+  - ESC
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - {t: TAB, h: GLOBE}
+  - {t: A, h: LSHFT}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LALT}
+  - {t: F, h: LGUI}
+  - {t: G, h: RALT}
+  - {t: H, h: RALT}
+  - {t: J, h: LGUI}
+  - {t: K, h: LALT}
+  - {t: L, h: LCTRL}
+  - {t: '''', h: LSHFT}
+  - {t: RET, h: GLOBE}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - {t: /, s: \}
+  - {t: (, h: numpad}
+  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: '{', h: LCMD}
+  - {t: '}', h: RCMD}
+  - {t: SPC, h: symbols}
+  - {t: ), h: LALT}
+  numpad:
+  - ''
+  - DEL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - /
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - BSPC
+  - GLOBE
+  - {t: Ctl+A, h: LSHFT}
+  - LCTL
+  - LALT
+  - LGUI
+  - RALT
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - RET
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - ''
+  - ':'
+  - '1'
+  - '2'
+  - '3'
+  - '='
+  - {type: held}
+  - navigation
+  - ''
+  - ','
+  - SPC
+  - '0'
+  navigation:
+  - ''
+  - DEL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PG UP
+  - ''
+  - ''
+  - ''
+  - ''
+  - BSPC
+  - GLOBE
+  - LSFT
+  - LCTL
+  - LALT
+  - LGUI
+  - RALT
+  - HOME
+  - LEFT
+  - UP
+  - RIGHT
+  - END
+  - RET
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PG DN
+  - ''
+  - DOWN
+  - ''
+  - ''
+  - numpad
+  - {type: held}
+  - ''
+  - ''
+  - SPC
+  - ''
+  function:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - GLOBE
+  - LSFT
+  - LCTL
+  - LALT
+  - LGUI
+  - RALT
+  - ''
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F1
+  - F2
+  - F3
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  - F12
+  - F11
+  - F10
+  symbols:
+  - ''
+  - ''
+  - '`'
+  - '*'
+  - '#'
+  - +
+  - '%'
+  - _
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '~'
+  - ^
+  - '@'
+  - '!'
+  - '='
+  - $
+  - RALT
+  - LGUI
+  - LALT
+  - LCTL
+  - ''
+  - GLOBE
+  - <
+  - '>'
+  - '['
+  - ']'
+  - '?'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '|'
+  - '&'
+  - '-'
+  - ''
+  - {type: held}
+  - ''
+  keyboard:
+  - '&flash 6'
+  - {type: held}
+  - BRI UP
+  - ''
+  - ''
+  - Gui+Sft+4
+  - Gui+Ctl+Sft+4
+  - VOL UP
+  - '&ind_con'
+  - ''
+  - '&ind_bat'
+  - ''
+  - ''
+  - ''
+  - BRI DN
+  - {t: '&bt_sel', h: '&bt_clr'}
+  - {t: '&bt_sel 1', h: '&bt_clr 1'}
+  - {t: '&bt_sel 2', h: '&bt_clr 2'}
+  - {t: '&bt_sel 3', h: '&bt_clr 3'}
+  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - ''
+  - CAPS
+  - ''
+  - VOL DN
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - PREV
+  - PP
+  - NEXT
+  - ''
+  - '&studio_unlock'
+  - ''
+  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', '', '']
