@@ -129,7 +129,9 @@ path.combo {
 <g transform="translate(0, 56)">
 <g transform="translate(69, 35) rotate(-2.5)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">&amp;lp_mc</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em" style="font-size: 64%">Launchpad</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">MissionCtrl</tspan>
+</text>
 </g>
 <g transform="translate(899, 35) rotate(2.5)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -545,7 +547,7 @@ path.combo {
 </g>
 <g transform="translate(93, 172) rotate(-12.5)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">LSFT</text>
+<text x="0" y="0" class="key tap">⇧</text>
 </g>
 <g transform="translate(145, 122) rotate(-7.5)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -696,7 +698,7 @@ path.combo {
 </g>
 <g transform="translate(93, 172) rotate(-12.5)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">LSFT</text>
+<text x="0" y="0" class="key tap">⇧</text>
 </g>
 <g transform="translate(145, 122) rotate(-7.5)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -952,7 +954,9 @@ path.combo {
 <g transform="translate(0, 56)">
 <g transform="translate(69, 35) rotate(-2.5)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">flash</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">dongle</tspan><tspan x="0" dy="1.2em">flash</tspan>
+</text>
 </g>
 <g transform="translate(899, 35) rotate(2.5)" class="key held keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
@@ -989,14 +993,18 @@ path.combo {
 </g>
 <g transform="translate(651, 65)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 88%">&amp;ind_con</tspan></text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">BT</tspan><tspan x="0" dy="1.2em">status</tspan>
+</text>
 </g>
 <g transform="translate(707, 56)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
 <g transform="translate(766, 29) rotate(2.5)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 88%">&amp;ind_bat</tspan></text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">battery</tspan><tspan x="0" dy="1.2em">status</tspan>
+</text>
 </g>
 <g transform="translate(830, 66) rotate(7.5)" class="key keypos-11">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1068,7 +1076,7 @@ path.combo {
 </g>
 <g transform="translate(105, 227) rotate(-12.5)" class="key keypos-26">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
+<text x="0" y="0" class="key tap">flash</text>
 </g>
 <g transform="translate(152, 177) rotate(-7.5)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1102,7 +1110,7 @@ path.combo {
 </g>
 <g transform="translate(862, 227) rotate(12.5)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
+<text x="0" y="0" class="key tap">flash</text>
 </g>
 <g transform="translate(323, 236) rotate(15.0)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

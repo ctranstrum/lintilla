@@ -1,6 +1,6 @@
 layers:
   Qwerty:
-  - '&lp_mc'
+  - Launchpad MissionCtrl
   - {t: MUTE, h: keyboard}
   - Esc
   - Q
@@ -101,7 +101,7 @@ layers:
   - ''
   - ⌫
   - GLOBE
-  - LSFT
+  - ⇧
   - ^
   - ⌥
   - ⌘
@@ -144,7 +144,7 @@ layers:
   - ''
   - ''
   - GLOBE
-  - LSFT
+  - ⇧
   - ^
   - ⌥
   - ⌘
@@ -215,7 +215,7 @@ layers:
   - {type: held}
   - ''
   keyboard:
-  - flash
+  - dongle flash
   - {type: held}
   - BRI UP
   - ''
@@ -223,9 +223,9 @@ layers:
   - screen shot
   - screen copy
   - VOL UP
-  - '&ind_con'
+  - BT status
   - ''
-  - '&ind_bat'
+  - battery status
   - ''
   - ''
   - ''
@@ -241,7 +241,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&bootloader'
+  - flash
   - ''
   - Caps 🔒
   - ''
@@ -250,7 +250,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&bootloader'
+  - flash
   - ⏮
   - ⏯
   - ⏭
