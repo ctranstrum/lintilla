@@ -36,7 +36,7 @@ parse_config:
     "&kp END": End
     "&kp PG_UP": PgUp
     "&kp PG_DN": PgDn
-    "&kb GLOBE": 🌐
+    "&kp GLOBE": 🌐
     "&kp LALT": ⌥
     "&kp RALT": Alt
     "&kp LCTL": ^
