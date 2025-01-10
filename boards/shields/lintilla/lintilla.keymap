@@ -262,7 +262,7 @@
         &bootloader &none &kp CAPS &none &kp C_VOL_DN                           &none   &none   &none   &none &bootloader
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ prev  ┃ play  ┃ next  ┃  ┃       ┃studio ┃       ┃
-                                      &kp PIPE &kp AMPS &kp MINUS &none &studio_unlock &none
+                                   &kp C_PREV &kp C_PP &kp C_NEXT &none &studio_unlock &none
 //                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫ unlock┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
@@ -293,7 +293,7 @@
             >;
         };
 
-        // Extra emply layers for ZMK Studio
+        // Extra empty layers for ZMK Studio
 
         layer7 {
             status = "reserved";
