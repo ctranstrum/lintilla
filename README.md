@@ -47,6 +47,8 @@
 
 ## Build Your Own
 
+Think the Lintilla might be right for you? Print out the [fit guide][fitguide] to see how it feels under your fingers.
+
 Want to build one? You will need to obtain the following components:
 
 | Qty    | Description                                                                                    |
@@ -96,6 +98,7 @@ Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 [ergonautone]: https://ergonautkb.com/docs/keyboards/ergonaut-one/intro/
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
 [firmware]: https://github.com/ctranstrum/lintilla/tree/zmk
+[fitguide]: images/fit-guide.pdf
 [hexnuts]: https://www.getfpv.com/m2-black-metal-hex-nut-set-of-8.html
 [jlc]: https://jlcpcb.com
 [keycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
