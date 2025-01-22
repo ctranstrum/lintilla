@@ -74,6 +74,22 @@ Once you have these items, you can follow the instructions in the [Build Guide][
 
 After you build the keyboard, you will need the [ZMK firmware][firmware].
 
+## What's this about a dongle?
+
+The Lintilla keyboard, with its [LED indicator][rgbled], is perfectly capable of running without a dongle.
+With a 250mah battery, the central half should last about 3 months between charges, and the peripheral about six months.
+
+Some people prefer to use a dongle, though, both to allow both halves to last about six months between recharging,
+as well as to provide additional feedback on the battery and bluetooth status and currently active layer and modifiers.
+
+I have tested the Lintilla with the following dongles, though you should be able to get any ZMK-compatible dongle to work with it:
+
+- The fancy [Prospector Dongle][prospector]
+- The more traditional [OLED Dongle][oled]
+
+Note that while the Lintilla keyboard uses XIAO BLE as its processor, you can use any bluetooth-capable ZMK-compatible processor
+on the dongle. If you found a dongle you like, but it uses the nice!nano processor, it should work just fine with Lintilla.
+
 ## Credits and inspiration
 
 - [ZMK][zmk]: for the firmware
@@ -104,8 +120,10 @@ Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 [keycaps]: https://lowprokb.ca/collections/keycaps/products/ldsa-low-profile-blank-keycaps
 [klor]: https://github.com/GEIGEIGEIST/KLOR
 [ohl]: LICENSE.txt
+[oled]: https://github.com/englmaxi/zmk-dongle-display
 [pcb]: pcb/lintilla-gerbers.zip
 [power]: https://typeractive.xyz/products/power-switch
+[prospector]: https://github.com/carrefinho/prospector
 [reset]: https://typeractive.xyz/products/reset-button
 [rgbled]: https://github.com/caksoylar/zmk-rgbled-widget
 [screws]: https://monsterbolts.com/products/mach-phil-flat-a2-m2?variant=21222571802707
