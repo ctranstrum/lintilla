@@ -24,7 +24,7 @@
 - Low cost wireless
   - xiao ble is only $10 per controller compared to $25 for the nice!nano
   - Reversible PCB for the cheapest manufacturing option (I ordered a set of 5 boards, the minimum order, for under $10)
-  - Big battery and an option for a dongle, so you can run for months without recharging
+  - Big battery and an option for a dongle, so you can [run for months without recharging][batteryestimate]
 - Ergonomic design for the ultimate comfort
   - split keyboard means you can place each half where it best works for you
   - keys are placed where (my) fingers at rest naturally fall
@@ -77,9 +77,9 @@ After you build the keyboard, you will need the [ZMK firmware][firmware].
 ## What's this about a dongle?
 
 The Lintilla keyboard, with its [LED indicator][rgbled], is perfectly capable of running without a dongle.
-With a 250mah battery, the central half should last about 3 months between charges, and the peripheral about six months.
+With a 250mah battery, the central half should last about 2 months between charges, and the peripheral about 4-6 months.
 
-Some people prefer to use a dongle, though, both to allow both halves to last about six months between recharging,
+Some people prefer to use a [dongle][dongle], though, both to allow both halves to last longer between recharging,
 as well as to provide additional feedback on the battery and bluetooth status and currently active layer and modifiers.
 
 I have tested the Lintilla with the following dongles, though you should be able to get any ZMK-compatible dongle to work with it:
@@ -87,8 +87,8 @@ I have tested the Lintilla with the following dongles, though you should be able
 - The fancy [Prospector Dongle][prospector]
 - The more traditional [OLED Dongle][oled]
 
-Note that while the Lintilla keyboard uses XIAO BLE as its processor, you can use any bluetooth-capable ZMK-compatible processor
-on the dongle. If you found a dongle you like, but it uses the nice!nano processor, it should work just fine with Lintilla.
+Note that while the Lintilla keyboard uses the XIAO BLE as its processor, you can use any bluetooth-capable ZMK-compatible processor
+on the dongle. If you found a dongle you like, but it uses the nice!nano processor, for example, it should work just fine with Lintilla.
 
 ## Credits and inspiration
 
@@ -106,10 +106,12 @@ cairn's Lintilla build, using JLC Black Resin for the case, with Nocturnal switc
 Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
+[batteryestimate]: https://zmk.dev/power-profiler
 [buildguide]: BUILD.md
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
 [diodes]: https://typeractive.xyz/products/smd-diodes
+[dongle]: https://zmk.dev/docs/development/hardware-integration/dongle
 [ergogen]: https://ergogen.xyz
 [ergonautone]: https://ergonautkb.com/docs/keyboards/ergonaut-one/intro/
 [filament]: https://gizmodorks.com/nylon-filament-200-g-spool/
