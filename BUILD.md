@@ -106,15 +106,15 @@ an angle on the board, the case may not fit.
 
 ### Hotswap sockets also need to be aligned
 
-Next step is the hotswap sockets. Although electrically, they will work even if installed
-the wrong way, in order to ensuret that the case fits correctly,
+Next step is the hotswap sockets. Although electrically they will work even if installed
+the wrong way, in order to ensure that the case fits correctly,
 it is important to look at the line on the silkscreen and align the hotswap
 socket so that the corner with the right angle is oriented to the line on the PCB.
 
-In the following picture, the blue square on SW19 shows the silkscreen line before
-a hotswap socket is installed, the green square on SW20 shows a hotswap socket in the
+In the following picture, the blue box on SW19 shows the silkscreen line before
+a hotswap socket is installed, the green box on SW20 shows a hotswap socket in the
 correct orientation where the silkscreen line is mostly hidden by the straight lines of
-the top edge of the socket, and the red square on SW21 shows an incorrectly oriented
+the top edge of the socket, and the red box on SW21 shows an incorrectly oriented
 hotswap socket, where the silkscreen line is clearly visible poking out around the
 angled edges of the socket.
 
