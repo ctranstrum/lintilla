@@ -123,10 +123,10 @@ angled edges of the socket.
 To install a hotswap socket, set the socket into place in the PCB, double check the alignment, and
 then heat one pad and feed solder into the hollow of the socket until it's pretty much filled up, noting that
 the hotswap socket will take a **LOT** more solder than used for the diodes. Repeat for the other leg.
-You want to be sure to use plenty of solder to allow for a strong bond to form,
+Note that you need to be careful not to use so much solder that it flows outside of the socket footprint,
+while still ensuring that you still have enough to allow for a strong bond to form,
 which will help provide strength to the socket for inserting and removing the switches,
-while still taking care not to overflow the hollow. If you use too much solder that
-spills out of the socket, the case will not fit correctly.
+If you use too much solder so that it spills out of the socket, the case will not fit correctly.
 
 ### Power switch and reset switch
 

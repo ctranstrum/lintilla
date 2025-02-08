@@ -338,7 +338,7 @@ outlines:
   _diode_hollow:
     - what: outline
       name: _diode_outline
-      expand: 0.4
+      expand: 0.75
 
   _socket_holes:
     # center
@@ -398,7 +398,7 @@ outlines:
   _socket_hollow_right:
     - what: outline
       name: _socket_outline
-      expand: 0.5
+      expand: 1
 
   # then drop it under every key
   socket_hollow_right_board:
@@ -447,7 +447,7 @@ outlines:
   _socket_hollow_left:
     - what: outline
       name: _socket_outline_mirror
-      expand: 0.5
+      expand: 1
 
   # then drop it under every key
   socket_hollow_left_board:
@@ -584,7 +584,7 @@ outlines:
   _reset_hollow:
     - what: outline
       name: _reset_model
-      expand: 0.5
+      expand: 0.6
 
   _power_model:
     - what: rectangle
@@ -598,7 +598,7 @@ outlines:
   _power_hollow:
     - what: outline
       name: _power_model
-      expand: 0.5
+      expand: 0.6
 
 cases:
   _xiao_light_right:
