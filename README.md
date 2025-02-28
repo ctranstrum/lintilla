@@ -103,6 +103,10 @@ on the dongle. If you found a dongle you like, but it uses the nice!nano process
 
 cairn's Lintilla build, using JLC Black Resin for the case, with Nocturnal switches and Chicago Steno keycaps.
 
+![kovas's Lintilla](images/lintilla-kovas.jpg)
+
+kovas's Lintilla, see some more details and pictures on [his website](https://kovasap.github.io/docs/lifestyle-optimizations/keyboards-and-typing/#lintilla).
+
 Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 
 [battery]: https://ydlbattery.com/products/3-7v-250mah-502030-lithium-polymer-ion-battery
