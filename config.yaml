@@ -234,6 +234,13 @@ outlines:
       size: [19, 21.5]
       corner: 1
 
+  # Make some room for the solder
+  _xiao_cutout_solder:
+    - what: rectangle
+      where: mcu
+      size: [19, 18]
+      corner: 1
+
   # Make a tiny hole for the blinky light
   _xiao_light_guide_right:
     - what: circle
@@ -398,7 +405,7 @@ outlines:
   _socket_hollow_right:
     - what: outline
       name: _socket_outline
-      expand: 1
+      expand: 0.75
 
   # then drop it under every key
   socket_hollow_right_board:
@@ -447,7 +454,7 @@ outlines:
   _socket_hollow_left:
     - what: outline
       name: _socket_outline_mirror
-      expand: 1
+      expand: 0.75
 
   # then drop it under every key
   socket_hollow_left_board:
@@ -759,6 +766,11 @@ cases:
       name: _xiao_cutout_wall
       extrude: 1.2
       shift: [0, 0, 2]
+      operation: subtract
+    - what: outline
+      name: _xiao_cutout_solder
+      extrude: 0.4
+      shift: [0, 0, 1.6]
       operation: subtract
     - what: outline
       name: _reset_hollow
