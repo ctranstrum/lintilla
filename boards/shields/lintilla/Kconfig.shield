@@ -9,3 +9,6 @@ config SHIELD_LINTILLA_DONGLE
 
 config SHIELD_LINTILLA_LEFT_PERIPHERAL
     def_bool $(shields_list_contains,lintilla_left_peripheral)
+
+config SHIELD_LINTILLA_MACRO_RIGHT
+    def_bool $(shields_list_contains,lintilla_macro_right)

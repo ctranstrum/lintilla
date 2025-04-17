@@ -50,6 +50,60 @@
             , <&key_physical_attrs 100 100 1091  370 (-1500)  1141   420>
             ;
     };
+
+    macro_right_layout: macro_right_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Macro Right";
+        transform = <&macro_right_transform>;
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100 1545   10     250  1595    60>
+            , <&key_physical_attrs 100 100 1102   64       0     0     0>
+            , <&key_physical_attrs 100 100 1202   47       0     0     0>
+            , <&key_physical_attrs 100 100 1309    0     250  1359    50>
+            , <&key_physical_attrs 100 100 1422   66     750  1472   116>
+            , <&key_physical_attrs 100 100 1522  158    1250  1572   208>
+            , <&key_physical_attrs 100 100 1608  232    1250  1658   282>
+            , <&key_physical_attrs 100 100 1102  164       0     0     0>
+            , <&key_physical_attrs 100 100 1202  147       0     0     0>
+            , <&key_physical_attrs 100 100 1306  100     250  1356   150>
+            , <&key_physical_attrs 100 100 1409  165     750  1459   215>
+            , <&key_physical_attrs 100 100 1501  255    1250  1551   305>
+            , <&key_physical_attrs 100 100 1587  330    1250  1637   380>
+            , <&key_physical_attrs 100 100 1102  264       0     0     0>
+            , <&key_physical_attrs 100 100 1202  247       0     0     0>
+            , <&key_physical_attrs 100 100 1302  200     250  1352   250>
+            , <&key_physical_attrs 100 100 1396  264     750  1446   314>
+            , <&key_physical_attrs 100 100 1480  353    1250  1530   403>
+            , <&key_physical_attrs 100 100  900  482    4500   950   532>
+            , <&key_physical_attrs 100 100  988  413 (-3000)  1038   463>
+            , <&key_physical_attrs 100 100 1091  370 (-1500)  1141   420>
+            ;
+    };
+
+    lintilla_position_map {
+        compatible = "zmk,physical-layout-position-map";
+        complete;
+        full: full {
+            physical-layout = <&default_layout>;
+            positions
+                = <    0                             1   >
+                , < 2  3  4  5  6  7     8  9 10 11 12 13>
+                , <14 15 16 17 18 19    20 21 22 23 24 25>
+                , <   26 27 28 29 30    31 32 33 34 35   >
+                , <            36 37 38 39 40 41         >
+                ;
+        };
+        macro_right: macro {
+            physical-layout = <&default_layout>;
+            positions
+                = <   41                             0   >
+                , <40 39 38 37 36 35     1  2  3  4  5  6>
+                , <34 33 32 31 30 29     7  8  9 10 11 12>
+                , <   28 27 26 25 24    13 14 15 16 17   >
+                , <            23 22 21 18 19 20         >
+                ;
+        };
+    };
 };
 
 // vim: expandtab softtabstop=4 shiftwidth=4

@@ -18,3 +18,9 @@ include:
   - board: seeeduino_xiao_ble
     shield: lintilla_right_peripheral rgbled_adapter
     artifact-name: lintilla-right-peripheral
+
+  # Lintilla Macropad as a unibody
+  - board: seeeduino_xiao_ble
+    shield: lintilla_macro_right rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: lintilla-macropad-right

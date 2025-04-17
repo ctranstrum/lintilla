@@ -1,0 +1,134 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <behaviors/rgbled_widget.dtsi>
+
+// Magic bluetooth button
+#define BT_(btnum) &bt_key btnum btnum
+
+/ {
+    behaviors {
+        bt_key: magic_bluetooth_key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&bt_clr>, <&bt_sel>;
+        };
+
+    };
+
+    macros {
+        bt_clr: bluetooth_clear {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>, <&bt BT_CLR>;
+        };
+
+        bt_sel: bluetooth_select {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&out OUT_BLE>, <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        macropad {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "macropad"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+//                                               ┏━━━━━━━┓
+//                                               ┃  ESC  ┃
+                                                 &lt 1 ESC
+//                                               ┃ keybd ┃
+//               ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
+//               ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃ BKSPC ┃
+                   &kp Y   &kp U   &kp I   &kp O   &kp P  &kp BSPC
+//               ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+//               ┃   G   ┃   J   ┃   K   ┃   L   ┃  ' "  ┃RETURN ┃
+                   &kp G   &kp J   &kp K   &kp L  &kp SQT &kp RET
+//               ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
+//               ┃   Z   ┃   X   ┃   B   ┃   M   ┃  Cmd  ┃
+                   &kp Z   &kp X   &kp B   &kp M &kp LCMD
+//   ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//   ┃  Ctrl ┃  Opt  ┃ space ┃
+     &kp LCTL &kp LALT &kp SPC
+//   ┗━━━━━━━┫       ┣━━━━━━━┛
+//           ┗━━━━━━━┛
+            >;
+        };
+
+        keybd {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "keyboard"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+//                                                ┏━━━━━━━┓
+//                                                ┃ ##### ┃
+                                                    &trans
+//                ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
+//                ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃  BLE  ┃
+                    BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4) &out OUT_BLE
+//                ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+//                ┃       ┃       ┃       ┃       ┃       ┃  USB  ┃
+                    &none   &none   &none   &none   &none  &out OUT_USB
+//                ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
+//                ┃con led┃       ┃bat led┃       ┃ flash ┃
+                  &ind_con  &none &ind_bat  &none &bootloader
+//    ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//    ┃       ┃studio ┃       ┃
+      &none &studio_unlock &none
+//    ┗━━━━━━━┫ unlock┣━━━━━━━┛
+//            ┗━━━━━━━┛
+            >;
+        };
+
+        // Extra empty layers for ZMK Studio
+
+        layer2 {
+            status = "reserved";
+        };
+
+        layer3 {
+            status = "reserved";
+        };
+
+        layer4 {
+            status = "reserved";
+        };
+
+        layer5 {
+            status = "reserved";
+        };
+
+        layer6 {
+            status = "reserved";
+        };
+
+        layer7 {
+            status = "reserved";
+        };
+
+        layer8 {
+            status = "reserved";
+        };
+
+        layer9 {
+            status = "reserved";
+        };
+
+        layer10 {
+            status = "reserved";
+        };
+
+        layer11 {
+            status = "reserved";
+        };
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=dts

@@ -57,10 +57,26 @@ endif
 
 if SHIELD_LINTILLA_LEFT_PERIPHERAL || SHIELD_LINTILLA_RIGHT_PERIPHERAL
 
-endif
-
 config ZMK_SPLIT
     default y
+
+endif
+
+if SHIELD_LINTILLA_MACRO_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Lintilla Macro"
+
+config ZMK_USB
+    default y
+
+config BT_MAX_CONN
+    default 5
+
+config BT_MAX_PAIRED
+    default 5
+
+endif
 
 config ZMK_BLE
     default y
