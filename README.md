@@ -19,6 +19,8 @@ manifest:
       url-base: https://github.com/ctranstrum
     - name: caksoylar # <-- and this for the LED
       url-base: https://github.com/caksoylar
+    - name: englmaxi # <-- if you want a dongle
+      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,6 +31,9 @@ manifest:
       revision: zmk
     - name: zmk-rgbled-widget # <-- and this for the LED
       remote: caksoylar
+      revision: main
+    - name: zmk-dongle-dislay
+      remote: englmaxi
       revision: main
   self:
     path: config
@@ -65,9 +70,24 @@ include:
     artifact-name: lintilla-right
 ```
 
+If you want to use just the right side as a standalone macropad:
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: lintilla_macro_right rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: lintilla-macropad-right
+```
+
 To customize the keymap for your Lintilla board, you can copy the
 [default keymap][keymap] from this repo to the `config` directory of
 your zmk config repo and edit it from there.
+
+To edit with ZMK Studio,
+connect via USB,
+fire up a Chrome browser,
+and go to [https://zmk.studio](https://zmk.studio).
 
 Default keymap:
 
