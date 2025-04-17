@@ -46,11 +46,11 @@
                                                  &lt 1 ESC
 //                                               ┃ keybd ┃
 //               ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
-//               ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃ BKSPC ┃
-                   &kp Y   &kp U   &kp I   &kp O   &kp P  &kp BSPC
+//               ┃   1   ┃   2   ┃   3   ┃   W   ┃   P   ┃ BKSPC ┃
+                   &kp N1  &kp N2  &kp N3  &kp W   &kp P  &kp BSPC
 //               ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-//               ┃   G   ┃   J   ┃   K   ┃   L   ┃  ' "  ┃RETURN ┃
-                   &kp G   &kp J   &kp K   &kp L  &kp SQT &kp RET
+//               ┃   A   ┃   G   ┃   H   ┃   J   ┃   L   ┃RETURN ┃
+                   &kp A   &kp G   &kp H   &kp J   &kp L  &kp RET
 //               ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
 //               ┃   Z   ┃   X   ┃   B   ┃   M   ┃  Cmd  ┃
                    &kp Z   &kp X   &kp B   &kp M &kp LCMD
