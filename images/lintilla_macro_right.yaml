@@ -2,17 +2,17 @@ layout: {zmk_keyboard: lintilla_macro_right}
 layers:
   macropad:
   - {t: Esc, h: keyboard}
-  - Y
-  - U
-  - I
-  - O
+  - '1'
+  - '2'
+  - '3'
+  - W
   - P
   - ⌫
+  - A
   - G
+  - H
   - J
-  - K
   - L
-  - ''''
   - ↵
   - Z
   - X
