@@ -111,6 +111,10 @@ kovas's Lintilla, see some more details and pictures on [his website](https://ko
 
 Kris's Lintilla.
 
+![Optional's Lintilla](images/wild-lintilla-4.jpg)
+
+Optional's Lintilla, read some more details on [her blog](https://blog.optional.page/misc/better-keyboard#interlude-my-experience).
+
 ---
 
 Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
