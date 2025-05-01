@@ -89,6 +89,15 @@ connect via USB,
 fire up a Chrome browser,
 and go to [https://zmk.studio](https://zmk.studio).
 
+To edit with [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/),
+you'll need to copy over the [`lintilla.json`][info.json]
+to the `config` directory of your repo.
+You won't be able to use the default keymap as is,
+because it uses custom pre-processing macros.
+Either remove them by hand,
+or instead start from [Optional's implementation][optional]
+of the popular Miryoku layout.
+
 Default keymap:
 
 ![default keymap](images/lintilla.svg)
@@ -96,3 +105,5 @@ Default keymap:
 [keymap]: https://github.com/ctranstrum/lintilla/tree/zmk/boards/shields/lintilla/lintilla.keymap
 [lintilla]: https://github.com/ctranstrum/lintilla
 [zmk]: https://zmk.dev/docs/user-setup#github-repo
+[info.json]: https://github.com/ctranstrum/lintilla/tree/zmk/config/lintilla.json
+[optional]: https://github.com/OptionalM/zmk-config/tree/Miryoku_v1.0
