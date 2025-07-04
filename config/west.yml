@@ -6,18 +6,16 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: englmaxi
       url-base: https://github.com/englmaxi
-    - name: ctranstrum
-      url-base: https://github.com/ctranstrum
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.2
+      revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
     - name: zmk-dongle-display
-      remote: ctranstrum
+      remote: englmaxi
       revision: main
   self:
     path: config
