@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: ctranstrum
+      url-base: https://github.com/ctranstrum
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,7 +17,7 @@ manifest:
       remote: caksoylar
       revision: main
     - name: zmk-dongle-display
-      remote: englmaxi
+      remote: ctranstrum
       revision: main
   self:
     path: config
