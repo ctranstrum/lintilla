@@ -506,6 +506,15 @@ outlines:
     - pcb_fill
     - -_switch_outline_holes
 
+  top_down_view:
+    - pcb_fill
+    - -_xiao_light_guide_left
+    - what: rectangle
+      where: key
+      size: [17.5, 16.5]
+      corner: 1
+      operation: subtract
+
   _bumper:
     - what: circle
       radius: 3.25
