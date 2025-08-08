@@ -9,7 +9,8 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # The revision needs to match .github/workflows/build.yml
+      revision: v0.3
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
