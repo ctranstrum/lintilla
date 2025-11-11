@@ -97,6 +97,20 @@ on the dongle. If you found a dongle you like, but it uses the nice!nano process
 - [Ergonaut One][ergonautone]: for the elegant approach to a xiao-based reversible PCB
 - [Klor][klor]: for the almost-perfect key layout
 
+## Descendants
+
+After I used the Lintilla for about three months, I realized that for me, the design had a few flaws:
+
+- The case can bend a bit on the outside edge of the controller; an extra screw there would have helped with that
+- Constantly adjusting the location of each split half as I moved around while typing was annoying
+- I felt like the layout had too many keys intended for use by the pinky, causing pain after long typing sessions
+- My thumbs aren't smart enough to use three keys each; I kept pressing the wrong thumb key, even after three months of use
+
+To address these concerns, while still preserving the basic structure of the Lintilla key layout,
+I designed the [Charlieflex keyboard][charlieflex], an ergonomic unibody keyboard with between 30 to 32 keys.
+
+I've been using a 31-key version of Charlieflex for over half a year now, and I'm very happy with it.
+
 ## In the wild
 
 ![first Lintilla in the wild](images/wild-lintilla-1.jpg)
@@ -124,6 +138,7 @@ Did you build a Lintilla? Send me a photo, and I'd be glad to feature it here.
 [buildguide]: BUILD.md
 [bumpons]: https://www.walmart.com/ip/Small-Door-Bumpers-Self-Adhesive-Clear-Rubber-Feet-Tiny-Bumpons-1-4-Diameter-X-1-16-Thick-100-Pack-u2026/2377364014
 [case]: cases/
+[charlieflex]: https://github.com/ctranstrum/chuck
 [diodes]: https://typeractive.xyz/products/smd-diodes
 [dongle]: https://zmk.dev/docs/development/hardware-integration/dongle
 [ergogen]: https://ergogen.xyz
