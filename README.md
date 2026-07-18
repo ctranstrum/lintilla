@@ -110,8 +110,9 @@ To address these concerns, while still preserving the basic structure of the Lin
 I designed the [Charlieflex keyboard][charlieflex], an ergonomic unibody keyboard with between 30 to 32 keys.
 
 After using a 31-key version of Charlieflex for over a year, I made some additional edits to it as well,
-producing a pair of keyboards named after the [Patagona][patagona] genus of butterfly. One is similar to the
-Charlieflex, with 30-32 keys, and the other closer to the Lintilla, with 40-42 keys. Both are wireless unibodies.
+producing a [pair of keyboards][patagona] named after the Patagona genus of butterfly. One is similar to the
+Charlieflex, with 30-32 keys and a central directional controller,
+and the other closer to the Lintilla, with 40-42 keys. Both are wireless unibodies.
 
 ## In the wild
 
